@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: flex-end;
   padding-top: 6rem;
+  z-index: 2000;
 }
 
 .sidebar-item {

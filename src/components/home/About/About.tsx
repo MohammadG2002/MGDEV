@@ -1,12 +1,13 @@
 import React from "react";
+import splitLetter from "../../../utils/splitLetter";
 import "./About.css";
 
 const About = () => {
   return (
     <section className="snap-section about" id="about">
       <div className="about-headline">
-        <h1>Hi, I'm Mohammad</h1>
-        <h1>Web Developer</h1>
+        <h1>{splitLetter("Hi, I'm Mohammad")}</h1>
+        <h1>{splitLetter("Web Developer")}</h1>
       </div>
       <div className="about-content">
         <p>

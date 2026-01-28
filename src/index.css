@@ -28,6 +28,22 @@ h1 {
   white-space: wrap;
 }
 
+h1 span {
+  display: inline-block;
+  cursor: default;
+  font-size: 60px;
+  color: aliceblue;
+  font-weight: 600;
+  line-height: 50px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+h1 span:hover {
+  color: var(--color-aqua);
+  transition: color 0.3s ease;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

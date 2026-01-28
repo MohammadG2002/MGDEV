@@ -2,14 +2,15 @@ import ArrowIcon from "../../../assets/icons/arrow-right.svg?react";
 import "./Home.css";
 import { HashLink } from "react-router-hash-link";
 import assets from "../../../assets/assets";
+import splitLetter from "../../../utils/splitLetter";
 
 const Home = () => {
   return (
     <section className="snap-section home" id="home">
       <div className="hero">
         <div className="headline">
-          <h1>Frontend </h1>
-          <h1>Software Developer</h1>
+          <h1>{splitLetter("Frontend ")}</h1>
+          <h1>{splitLetter("Software Developer")}</h1>
         </div>
 
         <div className="subheadline">

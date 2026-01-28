@@ -8,11 +8,14 @@
 
 .snap-section {
   height: 100vh;
+  min-width: 1366px;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-self: center;
+  justify-content: space-between;
   font-size: 3rem;
+  padding: 0 10rem 0 4rem;
 }
 
 .snap-section {
