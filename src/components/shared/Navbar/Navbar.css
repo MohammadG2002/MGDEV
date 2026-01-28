@@ -5,10 +5,10 @@
   width: 100vw;
   display: flex;
   padding: 0 2rem;
-  background-color: transparent;
   position: fixed;
   justify-content: space-between;
   align-items: end;
+  z-index: 1000;
 }
 
 .navbar-logo {
@@ -28,6 +28,7 @@
 .navbar-links {
   display: flex;
   gap: 1rem;
+  text-shadow: 1px 1px 5px black;
 }
 
 .navbar-link,
@@ -44,7 +45,9 @@
   align-items: center;
   color: aliceblue;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-link {

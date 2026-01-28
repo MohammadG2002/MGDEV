@@ -12,13 +12,17 @@
 }
 
 .sidebar-item {
-  padding: 1.5rem;
+  padding: 1rem;
   border-right: 2px solid aliceblue;
   color: aliceblue;
   font-family: "Source Sans 3", sans-serif;
-  font-size: var(--font-size-md);
+  font-size: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.sidebar-item:hover {
+  border-right: 3px solid aliceblue;
 }
 
 .sidebar-item.active {

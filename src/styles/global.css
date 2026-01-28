@@ -24,6 +24,10 @@
   --font-size-8xl: 6rem;
   --font-size-9xl: 8rem;
 
+  --hl-font-size: 60px;
+  --hl-font-weight: 600;
+  --hl-line-height: 50px;
+
   --bg-color: #141416;
   --color-aqua: #66ccff;
 }

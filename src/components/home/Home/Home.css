@@ -6,13 +6,7 @@
 .headline {
   display: flex;
   flex-direction: column;
-}
-
-.headline h1 {
-  font-size: 60px;
-  color: aliceblue;
-  font-weight: 600;
-  line-height: 50px;
+  min-width: 40rem;
 }
 
 .subheadline {
@@ -58,6 +52,20 @@
   position: absolute;
   font-size: 30px;
   color: var(--color-aqua);
-  bottom: 171px;
-  left: 175px;
+  bottom: 171.2px;
+  left: 174px;
+  animation: blink 1s infinite;
+  text-shadow: 5px -2px 1px rgba(0, 0, 0, 0.13);
+  rotate: y -40deg;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    visibility: visible;
+  }
+  50.01%,
+  100% {
+    visibility: hidden;
+  }
 }

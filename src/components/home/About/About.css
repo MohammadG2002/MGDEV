@@ -1,0 +1,25 @@
+.about-headline {
+  display: flex;
+  flex-direction: column;
+  min-width: 40rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 25rem;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 22px;
+  color: aliceblue;
+  white-space: wrap;
+}
+
+.about-content strong {
+  color: var(--color-aqua);
+  font-size: 20px;
+  font-weight: 600;
+}

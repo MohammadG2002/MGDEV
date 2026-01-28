@@ -1,29 +1,17 @@
-import React, { useState } from "react";
 import pagination from "./pagination";
 import "./Sidebar.css";
-import type { PaginationItem } from "../../../types/paginationType";
-import { HashLink } from "react-router-hash-link";
+import ScrollSpy from "react-scrollspy-navigation";
 
-interface SidebarProps {
-  items?: PaginationItem[];
-}
-
-const Sidebar = ({ items }: SidebarProps) => {
-  const [currentPage, setCurrentPage] = useState(items ? items[0].page : 1);
+const Sidebar = () => {
   return (
     <div className="sidebar">
-      {pagination.map((item) => (
-        <HashLink
-          key={item.id}
-          to={item.path}
-          className={`sidebar-item ${
-            currentPage === item.page ? "active" : ""
-          }`}
-          onClick={() => setCurrentPage(item.page)}
-        >
-          0{item.page - 1}
-        </HashLink>
-      ))}
+      <ScrollSpy activeClass="active">
+        {pagination.map((item) => (
+          <a key={item.id} href={item.path} className="sidebar-item ">
+            0{item.page}
+          </a>
+        ))}
+      </ScrollSpy>
     </div>
   );
 };

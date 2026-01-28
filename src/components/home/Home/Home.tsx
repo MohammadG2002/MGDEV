@@ -1,4 +1,3 @@
-import React from "react";
 import ArrowIcon from "../../../assets/icons/arrow-right.svg?react";
 import "./Home.css";
 import { HashLink } from "react-router-hash-link";
@@ -6,7 +5,7 @@ import assets from "../../../assets/assets";
 
 const Home = () => {
   return (
-    <section className="snap-section" id="home">
+    <section className="snap-section home" id="home">
       <div className="hero">
         <div className="headline">
           <h1>Frontend </h1>

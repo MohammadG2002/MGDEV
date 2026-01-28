@@ -18,3 +18,16 @@ html {
   scroll-behavior: smooth;
   background-color: #141416;
 }
+
+h1 {
+  font-size: 60px;
+  color: aliceblue;
+  font-weight: 600;
+  line-height: 50px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
