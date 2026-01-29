@@ -1,7 +1,7 @@
 import DevelopmentImage from "./Services-Image.png";
 
-const Assets = {
+const assets = {
   DevelopmentImage,
 };
 
-export default Assets;
+export default assets;
