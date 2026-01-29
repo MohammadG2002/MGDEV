@@ -2,7 +2,7 @@ import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Home from "./Home/Home";
 import Projects from "./Projects/Projects";
-import Skills from "./Skills/Skills";
+import Skills from "./Skills/Skills.tsx";
 
 const sections = [
   { component: Home, id: "home" },

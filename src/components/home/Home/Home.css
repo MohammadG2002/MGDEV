@@ -46,6 +46,7 @@
 .hero-img {
   display: flex;
   position: relative;
+  margin-right: 5rem;
 }
 
 .hero-img .dot {

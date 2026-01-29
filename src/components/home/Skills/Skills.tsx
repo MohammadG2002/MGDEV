@@ -1,41 +1,21 @@
+import Skill from "./Skill/Skill";
+import skills from "./skills";
 import "./Skills.css";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const contents = gsap.utils.toArray(".skill");
-
-    gsap.to(contents, {
-      xPercent: -100 * (contents.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        scrub: 0.1,
-        end: () => `+=${sectionRef.current?.offsetWidth}`,
-        snap: {
-          snapTo: 1 / (contents.length - 1),
-          duration: 2,
-        },
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
-    <section className="snap-section skills" id="skills" ref={sectionRef}>
+    <section className="snap-section skills" id="skills">
+      <div className="skills-description">
+        <h2>My Skills</h2>
+        <p>
+          Here are some of the skills I have acquired over the years in my
+          professional journey.
+        </p>
+      </div>
       <div className="skills-container">
-        <div className="skill">1</div>
-        <div className="skill">2</div>
-        <div className="skill">3</div>
+        {skills.map((skill) => (
+          <Skill key={skill.name} image={skill.image} name={skill.name} />
+        ))}
       </div>
     </section>
   );
