@@ -1,14 +1,11 @@
 import "./Home.css";
 import sections from "../../components/home/sections";
-import { useRef } from "react";
-import useScrollSnap from "../../hooks/useScrollSnap";
+import { useEffect } from "react";
 
 const Home = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  useScrollSnap(heroRef);
-
+  useEffect(() => {}, []);
   return (
-    <div className="snap-container" ref={heroRef}>
+    <div className="snap-container">
       {sections.map((section) => (
         <section.component key={section.id} />
       ))}

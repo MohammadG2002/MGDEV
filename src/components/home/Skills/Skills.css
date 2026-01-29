@@ -1,9 +1,18 @@
-.snap-section.skills {
+#skills {
   display: flex;
-  height: 100px;
-  width: 100%;
+  width: 100vw;
   background-color: blue;
+  padding: 0;
+  display: flex;
+}
+
+.skills-container {
+  display: flex;
+  height: 100%;
+  width: 300vw;
+  padding: 0;
   overflow-x: hidden;
+  align-items: center;
 }
 
 .snap-section.skills .skill {

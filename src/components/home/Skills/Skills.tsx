@@ -6,9 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const contents = gsap.utils.toArray("#skills .skill"); // Remove #skills from selector
+    const contents = gsap.utils.toArray(".skill");
 
     gsap.to(contents, {
       xPercent: -100 * (contents.length - 1),
@@ -16,7 +16,12 @@ const Skills = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         pin: true,
-        scrub: 1,
+        scrub: 0.1,
+        end: () => `+=${sectionRef.current?.offsetWidth}`,
+        snap: {
+          snapTo: 1 / (contents.length - 1),
+          duration: 2,
+        },
       },
     });
 
@@ -27,9 +32,11 @@ const Skills = () => {
 
   return (
     <section className="snap-section skills" id="skills" ref={sectionRef}>
-      <div className="skill">1</div>
-      <div className="skill">2</div>
-      <div className="skill">3</div>
+      <div className="skills-container">
+        <div className="skill">1</div>
+        <div className="skill">2</div>
+        <div className="skill">3</div>
+      </div>
     </section>
   );
 };

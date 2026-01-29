@@ -1,9 +1,7 @@
 .snap-container {
-  height: fit-content;
+  height: 100%;
   width: 100vw;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 .snap-section {
@@ -15,7 +13,6 @@
   justify-content: space-between;
   font-size: 3rem;
   padding: 0 10rem 0 4rem;
-  scroll-snap-align: start;
 }
 
 .snap-section {
