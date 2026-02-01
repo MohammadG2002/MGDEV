@@ -14,6 +14,12 @@
   margin-right: 5rem;
 }
 
+.about-underline h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: aliceblue;
+}
+
 .about-headline {
   display: flex;
   flex-direction: column;
@@ -44,10 +50,6 @@
   font-weight: 600;
 }
 
-.about-bg {
-  display: flex;
-  margin-right: 6rem;
-  flex-shrink: 0;
+.ref {
   width: 0;
-  max-height: 450px;
 }

@@ -35,9 +35,7 @@ const About = () => {
         </p>
       </motion.div>
 
-      <div className="about-bg" ref={ref}>
-        <p className="dot">.</p>
-      </div>
+      <div className="ref" ref={ref}></div>
     </section>
   );
 };
