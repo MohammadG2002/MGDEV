@@ -1,12 +1,31 @@
+#about {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  padding: 0 6rem;
+}
+
+.about-underline {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  height: 100%;
+  margin-right: 5rem;
+}
+
 .about-headline {
   display: flex;
   flex-direction: column;
   min-width: 40rem;
+  justify-content: center;
+  height: 100%;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
   max-width: 25rem;
   margin-right: 5rem;
@@ -23,4 +42,12 @@
   color: var(--color-aqua);
   font-size: 20px;
   font-weight: 600;
+}
+
+.about-bg {
+  display: flex;
+  margin-right: 6rem;
+  flex-shrink: 0;
+  width: 0;
+  max-height: 450px;
 }

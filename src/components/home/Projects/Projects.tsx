@@ -1,43 +1,41 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+"use client";
+
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import projects from "./projects";
 import "./Projects.css";
 
-gsap.registerPlugin(ScrollTrigger);
+const ITEM_WIDTH = 400;
+const GAP = 30;
 
 const Projects = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const contents = gsap.utils.toArray(".project");
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
-    gsap.to(contents, {
-      xPercent: -100 * (contents.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        scrub: 0.1,
-        end: () => `+=${sectionRef.current?.offsetWidth}`,
-        snap: {
-          snapTo: 1 / (contents.length - 1),
-          duration: 2,
-        },
-      },
-    });
+  // Move from first item centered to last item centered
+  const totalDistance = (projects.length - 1) * (ITEM_WIDTH + GAP);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -totalDistance]);
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
   return (
-    <section className="snap-section projects" id="projects" ref={sectionRef}>
-      <div className="projects-container">
-        <div className="project">Project 1</div>
-        <div className="project">Project 2</div>
-        <div className="project">Project 3</div>
-        <div className="project">Project 4</div>
+    <div id="projects">
+      <div ref={containerRef} className="scroll-container">
+        <div className="sticky-wrapper">
+          <motion.div className="gallery" style={{ x }}>
+            {projects.map((project) => (
+              <div key={project.id} className="gallery-item">
+                <div className="item-content">
+                  <span className="item-number">0{project.id}</span>
+                  <h2>{project.label}</h2>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

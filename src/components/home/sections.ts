@@ -1,15 +1,15 @@
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Home from "./Home/Home";
-import Projects from "./Projects/Projects";
+import Projects from "./Projects/Projects.tsx";
 import Skills from "./Skills/Skills.tsx";
 
 const sections = [
-  { component: Home, id: "home" },
-  { component: About, id: "about" },
-  { component: Skills, id: "skills" },
-  { component: Projects, id: "projects" },
-  { component: Contact, id: "contact" },
+  { component: Home, id: 1 },
+  { component: About, id: 2 },
+  { component: Skills, id: 3 },
+  { component: Projects, id: 4 },
+  { component: Contact, id: 5 },
 ];
 
 export default sections;
