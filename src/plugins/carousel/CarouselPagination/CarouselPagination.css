@@ -1,0 +1,30 @@
+.carousel-pagination {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(102, 204, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  border: none;
+}
+
+.carousel-pagination-dot:hover {
+  background-color: rgba(102, 204, 255, 0.5);
+}
+
+.carousel-pagination-dot.active {
+  background-color: #66ccff;
+  box-shadow: 0 0 8px rgba(102, 204, 255, 0.5);
+  transform: scale(1.3);
+}

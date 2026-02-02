@@ -3,3 +3,74 @@
   flex-direction: column;
   gap: 40px;
 }
+
+.projects-underline {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  height: 100%;
+  max-width: 100vw;
+}
+
+.projects-container {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  justify-content: start;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.projects-container .project {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.projects-container > div {
+  padding: 2rem;
+  box-sizing: border-box;
+  min-width: 100vw;
+  max-width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+  background-color: gray;
+  border: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: var(--color-aqua);
+  transform: scale(1.5);
+}
