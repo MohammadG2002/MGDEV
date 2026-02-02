@@ -1,7 +1,12 @@
 import React from "react";
+import "./Projects.css";
 
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <section className="snap-section projects" id="projects">
+      Projects
+    </section>
+  );
 };
 
 export default Projects;

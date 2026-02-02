@@ -1,26 +1,6 @@
-/* .snap-container {
-  height: auto;
-  width: 100vw;
-  overflow: visible;
-}
-
-.snap-section {
-  min-height: 100vh;
-  min-width: 1366px;
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  justify-content: space-between;
-  font-size: 3rem;
-  padding: 0 2.5rem 0 2.5rem;
-}
-
-.snap-section {
-  display: flex;
-} */
-
 html {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .snap-section {
@@ -36,7 +16,6 @@ html {
 .snap-section > div {
   height: fit-content;
   width: fit-content;
-  overflow: hidden;
 }
 
 .snap-section img {

@@ -41,12 +41,6 @@
   color: var(--color-aqua);
 }
 
-.skills-content strong {
-  color: var(--color-aqua);
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .skills-container {
   display: flex;
   flex-wrap: wrap;

@@ -26,6 +26,7 @@ h1 {
   line-height: 50px;
   text-overflow: ellipsis;
   white-space: wrap;
+  cursor: default;
 }
 
 h1 span {
@@ -37,11 +38,14 @@ h1 span {
   line-height: 50px;
   text-overflow: ellipsis;
   white-space: wrap;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 h1 span:hover {
   color: var(--color-aqua);
-  transition: color 0.3s ease;
+  text-shadow: var(--neon-aqua);
 }
 
 ::-webkit-scrollbar {

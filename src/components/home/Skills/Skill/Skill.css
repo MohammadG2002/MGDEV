@@ -17,7 +17,7 @@
 }
 
 .skill-image:hover {
-  filter: grayscale(100%) brightness(120%);
+  filter: brightness(120%) drop-shadow(var(--neon-aqua));
 }
 
 .skill-name {

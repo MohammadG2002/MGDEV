@@ -24,12 +24,14 @@
   flex-direction: column;
   min-width: 40rem;
   justify-content: center;
+  overflow: visible;
 }
 
 .headline-header {
   font-size: 3.5rem;
   line-height: 4rem;
   color: aliceblue;
+  overflow: visible;
 }
 
 .subheadline {
