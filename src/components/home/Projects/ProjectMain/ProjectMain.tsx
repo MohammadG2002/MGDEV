@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
 import "./ProjectMain.css";
 import splitLetter from "../../../../utils/splitLetter";
 
@@ -13,13 +14,15 @@ const ProjectMain = ({ id, onIndexChange }: projectMainProps) => {
       <div className="project__main-header">
         <h1>{splitLetter("My Projects")}</h1>
         <p>
-          I've built a variety of projects tailored to different aspects of each
-          client's business. If you'd like to see more examples beyond what's
-          showcased here, feel free to get in touch — I'd be happy to share.
+          This section presents an overview of projects I have worked on,
+          demonstrating a range of skills, tools, and development approaches.
         </p>
-        <button onClick={() => onIndexChange && onIndexChange(1)}>
-          View Projects
-        </button>
+        <a onClick={() => onIndexChange && onIndexChange(id + 1)}>
+          View Projects{" "}
+          <span>
+            <ArrowRight />
+          </span>
+        </a>
       </div>
     </div>
   );

@@ -9,8 +9,8 @@
 }
 
 .carousel-pagination-dot {
-  width: 12px;
-  height: 12px;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
   background-color: rgba(102, 204, 255, 0.3);
   cursor: pointer;
@@ -21,10 +21,11 @@
 
 .carousel-pagination-dot:hover {
   background-color: rgba(102, 204, 255, 0.5);
+  transform: scale(1.3);
 }
 
 .carousel-pagination-dot.active {
   background-color: #66ccff;
   box-shadow: 0 0 8px rgba(102, 204, 255, 0.5);
-  transform: scale(1.3);
+  transform: scale(1.6);
 }

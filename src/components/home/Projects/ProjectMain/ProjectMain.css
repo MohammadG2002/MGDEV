@@ -4,10 +4,45 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
+}
+
+.project-main .project__main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40rem;
+  gap: 2rem;
 }
 
 .project-main p {
   font-size: 18px;
   line-height: 24px;
   color: aliceblue;
+  text-align: center;
+}
+
+.project-main a {
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--color-lava);
+  align-items: center;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.project-main a svg path {
+  fill: var(--color-lava);
+}
+
+.project-main a span {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.project-main a:hover span {
+  transform: translateX(0.5rem);
 }
