@@ -2,7 +2,7 @@ import React from "react";
 import "./ProjectBuildSync.css";
 
 const ProjectBuildSync = () => {
-  return <div>ProjectBuildSync</div>;
+  return <div className="project-buildsync">ProjectBuildSync</div>;
 };
 
 export default ProjectBuildSync;

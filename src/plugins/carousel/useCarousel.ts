@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useMotionValue } from "framer-motion";
 import type { ItemScrollConfig, CarouselReturn } from "./types";
 
 const scrollToSection = (sectionId: string) => {
@@ -16,6 +17,9 @@ export const useCarousel = (
   const [currentIndex, setCurrentIndex] = useState(0);
   const isScrollingRef = useRef(false);
   const direction = config?.direction || "vertical";
+
+  // Just track the current index as a motion value
+  const currentSlideIndex = useMotionValue(0);
 
   const scrollToItem = (index: number) => {
     if (containerRef.current && index >= 0 && index < itemCount) {
@@ -40,6 +44,7 @@ export const useCarousel = (
       }
 
       setCurrentIndex(index);
+      currentSlideIndex.set(index);
 
       setTimeout(() => {
         isScrollingRef.current = false;
@@ -52,14 +57,12 @@ export const useCarousel = (
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // Only prevent default if the carousel is in view
       const rect = container.getBoundingClientRect();
       const isInView = rect.top < window.innerHeight && rect.bottom > 0;
 
       if (!isInView) return;
 
       e.preventDefault();
-
       if (isScrollingRef.current) return;
 
       if (e.deltaY > 0) {
@@ -93,7 +96,6 @@ export const useCarousel = (
       }
     };
 
-    // Listen to wheel events on the window but only if carousel is in view
     window.addEventListener("wheel", handleWheel, { passive: false });
     container.addEventListener("scroll", handleScroll);
 
@@ -113,5 +115,6 @@ export const useCarousel = (
     scrollToNext,
     scrollToIndex,
     scrollToLast,
+    scrollProgress: currentSlideIndex,
   };
 };

@@ -1,3 +1,5 @@
+import type { MotionValue } from "framer-motion";
+
 export interface ItemScrollConfig {
   onLastItemScroll?: string;
   onFirstItemScroll?: string;
@@ -10,4 +12,5 @@ export interface CarouselReturn {
   scrollToNext: () => void;
   scrollToIndex: (index: number) => void;
   scrollToLast: () => void;
+  scrollProgress: MotionValue<number>;
 }
