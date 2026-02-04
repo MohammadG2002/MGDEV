@@ -23,26 +23,28 @@
   text-align: center;
 }
 
-.project-main a {
+.project-main button {
   display: flex;
   font-size: 1.25rem;
   color: var(--color-lava);
   align-items: center;
   height: 2rem;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
-.project-main a svg path {
+.project-main button svg path {
   fill: var(--color-lava);
 }
 
-.project-main a span {
+.project-main button span {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
-.project-main a:hover span {
+.project-main button:hover span {
   transform: translateX(0.5rem);
 }

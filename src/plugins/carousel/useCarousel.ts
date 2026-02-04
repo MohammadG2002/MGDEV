@@ -17,6 +17,9 @@ export const useCarousel = (
   const [currentIndex, setCurrentIndex] = useState(0);
   const isScrollingRef = useRef(false);
   const direction = config?.direction || "vertical";
+  const isHorizontal = direction === "horizontal";
+  const lastItem = itemCount - 1;
+  const nextItem = currentIndex + 1;
 
   // Just track the current index as a motion value
   const currentSlideIndex = useMotionValue(0);
@@ -25,13 +28,12 @@ export const useCarousel = (
     if (containerRef.current && index >= 0 && index < itemCount) {
       isScrollingRef.current = true;
       const container = containerRef.current;
-      const scrollSize =
-        direction === "horizontal"
-          ? container.clientWidth
-          : container.clientHeight;
+      const scrollSize = isHorizontal
+        ? container.clientWidth
+        : container.clientHeight;
       const targetScroll = index * scrollSize;
 
-      if (direction === "horizontal") {
+      if (isHorizontal) {
         container.scrollTo({
           left: targetScroll,
           behavior: "smooth",
@@ -66,33 +68,33 @@ export const useCarousel = (
       if (isScrollingRef.current) return;
 
       if (e.deltaY > 0) {
-        if (currentIndex < itemCount - 1) {
+        if (currentIndex < lastItem) {
           scrollToItem(currentIndex + 1);
-        } else if (currentIndex === itemCount - 1 && config?.onLastItemScroll) {
+        } else if (config?.onLastItemScroll) {
           scrollToSection(config.onLastItemScroll);
         }
       } else if (e.deltaY < 0) {
         if (currentIndex > 0) {
           scrollToItem(currentIndex - 1);
-        } else if (currentIndex === 0 && config?.onFirstItemScroll) {
+        } else if (config?.onFirstItemScroll) {
           scrollToSection(config.onFirstItemScroll);
         }
       }
     };
 
-    const handleScroll = (e: Event) => {
-      if (!isScrollingRef.current) {
-        e.preventDefault();
-        const scrollSize =
-          direction === "horizontal"
-            ? container.clientWidth
-            : container.clientHeight;
-        const targetScroll = currentIndex * scrollSize;
-        if (direction === "horizontal") {
-          container.scrollLeft = targetScroll;
-        } else {
-          container.scrollTop = targetScroll;
-        }
+    const handleScroll = () => {
+      if (isScrollingRef.current) return;
+
+      const scrollSize = isHorizontal
+        ? container.clientWidth
+        : container.clientHeight;
+
+      const targetScroll = currentIndex * scrollSize;
+
+      if (isHorizontal) {
+        container.scrollLeft = targetScroll;
+      } else {
+        container.scrollTop = targetScroll;
       }
     };
 
@@ -103,11 +105,11 @@ export const useCarousel = (
       window.removeEventListener("wheel", handleWheel);
       container.removeEventListener("scroll", handleScroll);
     };
-  }, [currentIndex, itemCount, config, direction]);
+  }, [currentIndex, direction, config, itemCount]);
 
-  const scrollToNext = () => scrollToItem(currentIndex + 1);
+  const scrollToNext = () => scrollToItem(nextItem);
   const scrollToIndex = (index: number) => scrollToItem(index);
-  const scrollToLast = () => scrollToItem(itemCount - 1);
+  const scrollToLast = () => scrollToItem(lastItem);
 
   return {
     containerRef,

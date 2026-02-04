@@ -3,7 +3,7 @@ const splitLetter = (text: string) => {
     letter === " " ? (
       " "
     ) : (
-      <span key={index} className="letter">
+      <span key={index} className="letter" style={{ display: "inline" }}>
         {letter}
       </span>
     ),

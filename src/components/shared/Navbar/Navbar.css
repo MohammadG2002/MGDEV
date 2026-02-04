@@ -23,15 +23,9 @@
   align-items: center;
   gap: 0.5rem;
   border: none;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 1rem;
   text-shadow: 1px 1px 5px black;
 }
 
-.navbar-link,
 .contact-link {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1.2rem;

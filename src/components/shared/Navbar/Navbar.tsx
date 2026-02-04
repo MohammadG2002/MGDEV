@@ -9,13 +9,6 @@ const Navbar = () => {
       <HashLink to="#home" className="navbar-logo">
         <LogoIcon /> MGDev
       </HashLink>
-      <div className="navbar-links">
-        {navLinks.map((link) => (
-          <HashLink key={link.name} to={link.path} className="navbar-link">
-            {link.name}
-          </HashLink>
-        ))}
-      </div>
       <div className="contact">
         <HashLink to="#contact" className="contact-link">
           Contact

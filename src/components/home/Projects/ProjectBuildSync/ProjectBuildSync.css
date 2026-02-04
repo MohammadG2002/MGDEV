@@ -5,3 +5,77 @@
   gap: 1.5rem;
   align-items: center;
 }
+
+.project__buildsync-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 30rem;
+  flex-shrink: 0;
+  margin-right: 5rem;
+  z-index: 100;
+}
+
+.project__buildsync-header p {
+  font-size: 18px;
+  line-height: 24px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.project__buildsync-header p strong {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-aqua);
+  text-align: center;
+}
+
+.project__buildsync-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.project__buildsync-images .buildsync-ipad {
+  max-width: 22rem;
+  height: auto;
+  z-index: 1;
+  filter: none;
+  transition: filter 0.3s ease;
+  margin-right: 10rem;
+}
+
+.project__buildsync-images .buildsync-ipad:hover {
+  filter: drop-shadow(var(--neon-aqua));
+}
+
+.links a {
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--color-lava);
+  align-items: center;
+  height: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.links a svg path {
+  fill: var(--color-lava);
+}
+
+.links a span {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.links a:hover span {
+  transform: translateX(0.5rem);
+}
