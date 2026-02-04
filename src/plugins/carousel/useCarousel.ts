@@ -4,9 +4,7 @@ import type { ItemScrollConfig, CarouselReturn } from "./types";
 
 const scrollToSection = (sectionId: string) => {
   const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
+  section?.scrollIntoView({ behavior: "smooth" });
 };
 
 export const useCarousel = (
@@ -16,107 +14,152 @@ export const useCarousel = (
   const containerRef = useRef<HTMLElement>(null!);
   const [currentIndex, setCurrentIndex] = useState(0);
   const isScrollingRef = useRef(false);
-  const direction = config?.direction || "vertical";
-  const isHorizontal = direction === "horizontal";
-  const lastItem = itemCount - 1;
-  const nextItem = currentIndex + 1;
-
-  // Just track the current index as a motion value
   const currentSlideIndex = useMotionValue(0);
 
-  const scrollToItem = (index: number) => {
-    if (containerRef.current && index >= 0 && index < itemCount) {
-      isScrollingRef.current = true;
-      const container = containerRef.current;
-      const scrollSize = isHorizontal
-        ? container.clientWidth
-        : container.clientHeight;
-      const targetScroll = index * scrollSize;
+  const direction = config?.direction || "vertical";
+  const lastItem = itemCount - 1;
 
-      if (isHorizontal) {
+  const updateIndex = (index: number) => {
+    setCurrentIndex(index);
+    currentSlideIndex.set(index);
+  };
+
+  const scrollToItem = (index: number) => {
+    if (index < 0 || index >= itemCount) return;
+
+    isScrollingRef.current = true;
+
+    if (direction === "horizontal") {
+      const container = containerRef.current;
+      if (container) {
         container.scrollTo({
-          left: targetScroll,
-          behavior: "smooth",
-        });
-      } else {
-        container.scrollTo({
-          top: targetScroll,
+          left: index * container.clientWidth,
           behavior: "smooth",
         });
       }
-
-      setCurrentIndex(index);
-      currentSlideIndex.set(index);
-
-      setTimeout(() => {
-        isScrollingRef.current = false;
-      }, 800);
+    } else {
+      const sections = document.querySelectorAll(".snap-section");
+      sections[index]?.scrollIntoView({ behavior: "smooth" });
     }
+
+    updateIndex(index);
+    setTimeout(() => (isScrollingRef.current = false), 800);
   };
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    if (direction === "horizontal") {
+      const container = containerRef.current;
+      if (!container) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      const rect = container.getBoundingClientRect();
-      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+      const handleWheel = (e: WheelEvent) => {
+        e.preventDefault();
+        if (isScrollingRef.current) return;
 
-      if (!isInView) return;
-
-      e.preventDefault();
-      if (isScrollingRef.current) return;
-
-      if (e.deltaY > 0) {
-        if (currentIndex < lastItem) {
-          scrollToItem(currentIndex + 1);
-        } else if (config?.onLastItemScroll) {
-          scrollToSection(config.onLastItemScroll);
+        if (e.deltaY > 0) {
+          if (currentIndex < lastItem) {
+            scrollToItem(currentIndex + 1);
+          } else if (config?.onLastItemScroll) {
+            scrollToSection(config.onLastItemScroll);
+          }
+        } else if (e.deltaY < 0) {
+          if (currentIndex > 0) {
+            scrollToItem(currentIndex - 1);
+          } else if (config?.onFirstItemScroll) {
+            scrollToSection(config.onFirstItemScroll);
+          }
         }
-      } else if (e.deltaY < 0) {
-        if (currentIndex > 0) {
-          scrollToItem(currentIndex - 1);
-        } else if (config?.onFirstItemScroll) {
-          scrollToSection(config.onFirstItemScroll);
+      };
+
+      const handleScroll = () => {
+        if (isScrollingRef.current) return;
+
+        const newIndex = Math.round(
+          container.scrollLeft / container.clientWidth,
+        );
+        if (
+          newIndex !== currentIndex &&
+          newIndex >= 0 &&
+          newIndex < itemCount
+        ) {
+          updateIndex(newIndex);
         }
-      }
-    };
+      };
 
-    const handleScroll = () => {
-      if (isScrollingRef.current) return;
+      container.addEventListener("wheel", handleWheel, { passive: false });
+      container.addEventListener("scroll", handleScroll);
 
-      const scrollSize = isHorizontal
-        ? container.clientWidth
-        : container.clientHeight;
+      return () => {
+        container.removeEventListener("wheel", handleWheel);
+        container.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      const isInHorizontalSection = () => {
+        const horizontalSection = document.querySelector(
+          '[data-horizontal="true"]',
+        );
+        if (!horizontalSection) return false;
 
-      const targetScroll = currentIndex * scrollSize;
+        const rect = horizontalSection.getBoundingClientRect();
+        const viewportMid = window.innerHeight / 2;
+        return rect.top <= viewportMid && rect.bottom >= viewportMid;
+      };
 
-      if (isHorizontal) {
-        container.scrollLeft = targetScroll;
-      } else {
-        container.scrollTop = targetScroll;
-      }
-    };
+      const handleWheel = (e: WheelEvent) => {
+        if (isInHorizontalSection()) return;
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    container.addEventListener("scroll", handleScroll);
+        e.preventDefault();
+        if (isScrollingRef.current) return;
 
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      container.removeEventListener("scroll", handleScroll);
-    };
-  }, [currentIndex, direction, config, itemCount]);
+        if (e.deltaY > 0) {
+          if (currentIndex < lastItem) {
+            scrollToItem(currentIndex + 1);
+          } else if (config?.onLastItemScroll) {
+            scrollToSection(config.onLastItemScroll);
+          }
+        } else if (e.deltaY < 0) {
+          if (currentIndex > 0) {
+            scrollToItem(currentIndex - 1);
+          } else if (config?.onFirstItemScroll) {
+            scrollToSection(config.onFirstItemScroll);
+          }
+        }
+      };
 
-  const scrollToNext = () => scrollToItem(nextItem);
-  const scrollToIndex = (index: number) => scrollToItem(index);
-  const scrollToLast = () => scrollToItem(lastItem);
+      const handleScroll = () => {
+        if (isScrollingRef.current) return;
+
+        const sections = document.querySelectorAll(".snap-section");
+        const scrollMid = window.scrollY + window.innerHeight / 2;
+
+        sections.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top + window.scrollY;
+          const sectionBottom = sectionTop + rect.height;
+
+          if (scrollMid >= sectionTop && scrollMid < sectionBottom) {
+            if (index !== currentIndex && index >= 0 && index < itemCount) {
+              updateIndex(index);
+            }
+          }
+        });
+      };
+
+      window.addEventListener("wheel", handleWheel, { passive: false });
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("wheel", handleWheel);
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [currentIndex, config, itemCount, direction, lastItem]);
 
   return {
     containerRef,
     currentIndex,
-    scrollToNext,
-    scrollToIndex,
-    scrollToLast,
+    scrollToNext: () => scrollToItem(currentIndex + 1),
+    scrollToIndex: scrollToItem,
+    scrollToLast: () => scrollToItem(lastItem),
     scrollProgress: currentSlideIndex,
   };
 };

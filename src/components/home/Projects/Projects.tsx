@@ -1,6 +1,7 @@
 import "./Projects.css";
 import projects from "./projects";
 import { useCarousel, CarouselPagination } from "../../../plugins/carousel";
+import type { RefObject } from "react";
 
 const Projects = () => {
   const { containerRef, currentIndex, scrollToIndex, scrollProgress } =
@@ -11,11 +12,15 @@ const Projects = () => {
     });
 
   return (
-    <section className="snap-section projects" id="projects">
+    <section
+      className="snap-section projects"
+      id="projects"
+      data-horizontal="true"
+    >
       <div className="projects-underline" style={{ position: "relative" }}>
         <div
           className="projects-container"
-          ref={containerRef as React.RefObject<HTMLDivElement>}
+          ref={containerRef as RefObject<HTMLDivElement>}
         >
           {projects.map((project, index) => (
             <project.component
