@@ -1,45 +1,59 @@
 "use client";
 import { motion, useScroll } from "motion/react";
-import ArrowIcon from "../../../assets/icons/arrow-right.svg?react";
-import { HashLink } from "react-router-hash-link";
-import assets from "../../../assets/assets";
-import splitLetter from "../../../utils/splitLetter";
+import GitHubIcon from "../../../assets/icons/github.svg?react";
+import LinkedinIcon from "../../../assets/icons/linkedin.svg?react";
 import { useRef } from "react";
 import useParallax from "../../../hooks/useParallax";
 import "./Contact.css";
+import { Link } from "react-router-dom";
+import splitLetter from "../../../utils/splitLetter";
+import { useFadeAnimation } from "../../../hooks/useFadeAnimation";
+import { useScrollSpring } from "../../../hooks/useScrollSpring";
 
 const Contact = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 500);
+  const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
+
+  const { fadeHeader, fadeContent, fadeLinks } = useFadeAnimation(slowProgress);
   return (
     <section className="snap-section contact" id="contact">
-      <div className="hero-img" ref={ref}>
-        <img src={assets.DevelopmentImage} alt="Development Illustration" />
-        <p className="dot">.</p>
-      </div>
       <motion.div className="headline-underline" style={{ y }}>
-        <div className="hero">
-          <div className="headline">
-            <h1 className="headline-header">{splitLetter("Contact Me")}</h1>
-          </div>
-        </div>
-        <div className="headline-content">
-          <div className="subheadline">
-            <p>
-              Designing and developing modern web experiences. <br />
-              I focus on usability, clean interfaces, <br />
-              and writing scalable front-end code.
-            </p>
-          </div>
-          <HashLink to="#about" className="about-link">
-            About Me{" "}
-            <span>
-              <ArrowIcon />
-            </span>
-          </HashLink>
-        </div>
+        <motion.h1 className="headline-header" style={{ opacity: fadeHeader }}>
+          {splitLetter("Contact Me")}
+        </motion.h1>
+        <motion.div className="subheadline" style={{ opacity: fadeContent }}>
+          <p>
+            Have a project in mind or want to work together?
+            <br />
+            I'd love to hear from you.
+            <br />
+            Get in touch and let's build something meaningful and impactful
+            together!
+          </p>
+        </motion.div>
+        <motion.a
+          href="mailto:mohadahmed90@gmail.com"
+          target="_blank"
+          className="email-link"
+          style={{ opacity: fadeLinks }}
+        >
+          mohadahmed90@gmail.com
+        </motion.a>
+        <motion.div className="socials" style={{ opacity: fadeLinks }}>
+          <Link to="https://github.com/mohammadg2002" target="_blank">
+            <GitHubIcon />
+          </Link>
+          <Link
+            to="https://www.linkedin.com/in/mohammad-ghanim-6286b7294/"
+            target="_blank"
+          >
+            <LinkedinIcon />
+          </Link>
+        </motion.div>
       </motion.div>
+      <div ref={ref} />
     </section>
   );
 };

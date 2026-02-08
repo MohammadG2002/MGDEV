@@ -57,7 +57,7 @@
 .links a {
   display: flex;
   font-size: 1.25rem;
-  color: var(--color-lava);
+  color: var(--color-aqua);
   align-items: center;
   height: 2rem;
   cursor: pointer;
@@ -66,7 +66,7 @@
 }
 
 .links a svg path {
-  fill: var(--color-lava);
+  fill: var(--color-aqua);
 }
 
 .links a span {

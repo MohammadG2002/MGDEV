@@ -5,102 +5,70 @@
   padding: 0 6rem;
 }
 
-.headline-underline {
+.contact .headline-underline {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: fit-content;
   height: 100%;
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.headline {
-  display: flex;
-  flex-direction: column;
-  min-width: 40rem;
-  justify-content: center;
-  overflow: visible;
-}
-
-.headline-header {
-  font-size: 3.5rem;
-  line-height: 4rem;
-  color: aliceblue;
-  overflow: visible;
-}
-
-.subheadline {
+.contact .subheadline {
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
 }
 
-.subheadline p {
+.contact .subheadline p {
+  text-align: center;
   font-size: 18px;
   line-height: 24px;
   color: aliceblue;
+  max-width: 30rem;
 }
 
-.about-link {
+.email-link {
+  color: var(--color-lava);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 700;
   display: flex;
-  font-size: 1.25rem;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: aliceblue;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: start;
+  height: fit-content;
+}
+
+.socials a {
+  height: fit-content;
+  width: fit-content;
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+.socials a:hover {
+  filter: brightness(120%) drop-shadow(var(--neon-aqua));
+}
+
+.socials a svg {
   color: var(--color-aqua);
-  align-items: center;
-  justify-content: flex-start;
-  height: 2rem;
-  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: transform 0.3s ease;
 }
 
-.about-link span {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem;
-  height: 100%;
-  transition: transform 300ms ease;
-}
-
-.about-link:hover span {
-  transform: rotate(90deg);
-}
-
-.hero-img {
-  display: flex;
-  position: relative;
-  margin-right: 6rem;
-  flex-shrink: 0;
-  max-width: 400px;
-  max-height: 450px;
-  transition: filter 300ms ease;
-}
-
-.hero-img:hover {
-  filter: drop-shadow(var(--shadow-aqua));
-}
-
-.hero-img .dot {
-  position: absolute;
-  font-size: 30px;
-  color: var(--color-aqua);
-  bottom: 171.2px;
-  left: 174px;
-  animation: blink 1s infinite;
-  text-shadow: 5px -2px 1px rgba(0, 0, 0, 0.13);
-  rotate: y -40deg;
-  z-index: 10000;
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    visibility: visible;
-  }
-  50.01%,
-  100% {
-    visibility: hidden;
-  }
+.socials a:hover svg {
+  transform: scale(1.2);
 }

@@ -93,6 +93,8 @@ export const useCarousel = (
         container.removeEventListener("scroll", handleScroll);
       };
     } else {
+      let lastHorizontalSection: Element | null = null;
+
       const isInHorizontalSection = () => {
         const horizontalSection = document.querySelector(
           '[data-horizontal="true"]',
@@ -105,6 +107,37 @@ export const useCarousel = (
       };
 
       const handleWheel = (e: WheelEvent) => {
+        const horizontalSection = document.querySelector(
+          '[data-horizontal="true"]',
+        );
+
+        // Check if we're entering the horizontal section
+        if (horizontalSection && !lastHorizontalSection) {
+          const rect = horizontalSection.getBoundingClientRect();
+          const entering = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (entering) {
+            lastHorizontalSection = horizontalSection;
+
+            // Determine direction: if scrolling down (deltaY > 0), start at first slide
+            if (e.deltaY > 0) {
+              // Entering from top - reset to first slide
+              const container = horizontalSection as HTMLElement;
+              container.scrollTo({ left: 0, behavior: "auto" });
+            } else {
+              // Entering from bottom - set to last slide
+              const container = horizontalSection as HTMLElement;
+              const slideWidth = container.clientWidth;
+              container.scrollTo({
+                left: (itemCount - 1) * slideWidth,
+                behavior: "auto",
+              });
+            }
+          }
+        } else if (!horizontalSection || !isInHorizontalSection()) {
+          lastHorizontalSection = null;
+        }
+
         if (isInHorizontalSection()) return;
 
         e.preventDefault();

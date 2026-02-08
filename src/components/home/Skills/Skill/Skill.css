@@ -16,7 +16,7 @@
   transition: filter 0.3s ease;
 }
 
-.skill-image:hover {
+.skill:hover .skill-image {
   filter: brightness(120%) drop-shadow(var(--neon-aqua));
 }
 
