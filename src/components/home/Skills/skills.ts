@@ -9,7 +9,7 @@ import git from "../../../assets/icons/git.svg?react";
 import vscode from "../../../assets/icons/VS.svg?react";
 import cpp from "../../../assets/icons/cpp.svg?react";
 import java from "../../../assets/icons/Java.svg?react";
-import vercel from "../../../assets/icons/vercel.svg?react";
+import vercel from "../../../assets/icons/Vercel.svg?react";
 
 const skills = [
   { image: html, name: "HTML5" },
