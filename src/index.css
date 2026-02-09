@@ -15,8 +15,14 @@ body,
 html {
   height: 100vh;
   width: 100%;
+  max-width: 100vw;
   scroll-behavior: smooth;
   background-color: #141416;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1 {
