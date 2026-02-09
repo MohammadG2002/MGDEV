@@ -8,6 +8,7 @@ import { useScrollSpring } from "../../../../hooks/useScrollSpring";
 import { useSlideProgress } from "../../../../hooks/useSlideProgress";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
+import { useFadeAnimation } from "../../../../hooks/useFadeAnimation";
 
 interface ProjectBuildSyncProps {
   scrollProgress: MotionValue<number>;
@@ -24,14 +25,13 @@ const ProjectBuildSync = ({ scrollProgress, id }: ProjectBuildSyncProps) => {
 
   // Transform to phone movement
   const phoneX = useTransform(slowProgress, [0, 1], [150, 0]);
-  const headerOpacity = useTransform(slowProgress, [0, 0.3, 1], [0, 0, 1]);
-  const textOpacity = useTransform(slowProgress, [0, 0.6, 1], [0, 0, 1]);
-  const linkOpacity = useTransform(slowProgress, [0, 0.9, 1], [0, 0, 1]);
+  const { fadeHeaderX, fadeContentX, fadeLinksX } =
+    useFadeAnimation(slowProgress);
   return (
     <div className="project__buildsync">
       <motion.div
         className="project__buildsync-images"
-        style={{ x: phoneX, opacity: headerOpacity }}
+        style={{ x: phoneX, opacity: fadeHeaderX }}
       >
         <img
           src={assets.iPad}
@@ -40,11 +40,11 @@ const ProjectBuildSync = ({ scrollProgress, id }: ProjectBuildSyncProps) => {
         />
       </motion.div>
       <div className="project__buildsync-header" ref={ref}>
-        <motion.h1 style={{ opacity: headerOpacity }}>
+        <motion.h1 style={{ opacity: fadeHeaderX }}>
           {" "}
           {splitLetter("BuildSync")}
         </motion.h1>
-        <motion.p style={{ opacity: textOpacity }}>
+        <motion.p style={{ opacity: fadeContentX }}>
           BuildSync is a full-stack project management system built with
           <strong> React</strong>, <strong>JavaScript</strong>,{" "}
           <strong>Node.js</strong>, <strong>Express</strong>, and{" "}
@@ -53,7 +53,7 @@ const ProjectBuildSync = ({ scrollProgress, id }: ProjectBuildSyncProps) => {
           scheduling, task dependencies, and execution planning, with a focus on
           practical system architecture and responsive user interfaces.
         </motion.p>
-        <motion.div className="links" style={{ opacity: linkOpacity }}>
+        <motion.div className="links" style={{ opacity: fadeLinksX }}>
           <Link to="https://github.com/MohammadG2002/BuildSync" target="_blank">
             View the code{" "}
             <span>

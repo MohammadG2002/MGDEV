@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import type { MotionValue } from "framer-motion";
 
 export const useSlideProgress = (
@@ -6,13 +6,14 @@ export const useSlideProgress = (
   slideIndex: number,
   localProgress: MotionValue<number>,
 ) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // 🔹 Set correct initial state BEFORE first paint
+    const current = scrollProgress.get();
+    localProgress.set(current === slideIndex ? 1 : 0);
+
+    // 🔹 Subscribe to future changes
     const unsubscribe = scrollProgress.on("change", (currentSlide) => {
-      if (currentSlide === slideIndex) {
-        localProgress.set(1);
-      } else {
-        localProgress.set(0);
-      }
+      localProgress.set(currentSlide === slideIndex ? 1 : 0);
     });
 
     return () => unsubscribe();

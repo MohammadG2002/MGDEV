@@ -1,10 +1,10 @@
 .project-main {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  height: 100vh;
+  width: 100vw;
   align-items: center;
+  padding: 0 6rem;
+  gap: 2rem;
 }
 
 .project-main .project__main-header {
@@ -12,8 +12,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: fit-content;
+  height: 100%;
   max-width: 40rem;
-  gap: 2rem;
+  flex-shrink: 0;
+  gap: 1rem;
 }
 
 .project-main p {

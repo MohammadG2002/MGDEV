@@ -6,10 +6,13 @@ import assets from "../../../../assets/assets";
 import splitLetter from "../../../../utils/splitLetter";
 import { useScrollSpring } from "../../../../hooks/useScrollSpring";
 import { useSlideProgress } from "../../../../hooks/useSlideProgress";
+import { useFadeAnimation } from "../../../../hooks/useFadeAnimation";
+import { Link } from "react-router-dom";
+import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
 
 interface projectKanbanProps {
   scrollProgress: MotionValue<number>;
-  id: number; // Make sure you're passing this from Projects.tsx
+  id: number;
 }
 
 const ProjectKanban = ({ scrollProgress, id }: projectKanbanProps) => {
@@ -18,30 +21,50 @@ const ProjectKanban = ({ scrollProgress, id }: projectKanbanProps) => {
 
   // Automatically detect when this slide is active
   useSlideProgress(scrollProgress, id, localProgress);
-
-  // Transform to phone movement
-  const phoneX = useTransform(slowProgress, [0, 1], [-150, 0]);
-  const headerOpacity = useTransform(slowProgress, [0, 0.3, 1], [0, 0, 1]);
-  const textOpacity = useTransform(slowProgress, [0, 0.6, 1], [0, 0, 1]);
+  const { fadeHeaderX, fadeContentX, fadeLinksX } =
+    useFadeAnimation(slowProgress);
+  const phoneX = useTransform(slowProgress, [0, 1], [150, 0]);
 
   return (
     <div className="project__kanban">
       <div className="project__kanban-header">
-        <motion.h1 style={{ opacity: headerOpacity }}>
+        <motion.h1 style={{ opacity: fadeHeaderX }}>
           {splitLetter("Taskly")}
         </motion.h1>
-        <motion.p style={{ opacity: textOpacity }}>
+        <motion.p style={{ opacity: fadeContentX }}>
           Taskly is a frontend Kanban-style task management interface built with
           <strong> React </strong>and<strong> TypeScript</strong>. <br /> It
           demonstrates interactive task organization and workflow management
           using mock data, focusing on responsive design and smooth UI
           interactions.
         </motion.p>
+        <motion.div className="links" style={{ opacity: fadeLinksX }}>
+          <Link
+            to="https://github.com/MohammadG2002/Management-Project"
+            target="_blank"
+            className="code"
+          >
+            View the code{" "}
+            <span>
+              <ArrowRight />
+            </span>
+          </Link>
+          <Link
+            to="https://taskly-virid.vercel.app"
+            target="_blank"
+            className="demo"
+          >
+            Enter the demo{" "}
+            <span>
+              <ArrowRight />
+            </span>
+          </Link>
+        </motion.div>
       </div>
       <motion.div
         className="project__kanban-images"
         ref={ref}
-        style={{ opacity: headerOpacity }}
+        style={{ opacity: fadeHeaderX }}
       >
         <img
           src={assets.tasklyLaptop}
@@ -50,7 +73,7 @@ const ProjectKanban = ({ scrollProgress, id }: projectKanbanProps) => {
         />
         <motion.div
           className="phone-container"
-          style={{ x: phoneX, opacity: headerOpacity }}
+          style={{ x: phoneX, opacity: fadeContentX }}
         >
           <img
             src={assets.tasklyPhone}

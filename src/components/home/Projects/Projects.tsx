@@ -1,8 +1,7 @@
-import "./Projects.css";
 import projects from "./projects";
 import { useCarousel, CarouselPagination } from "../../../plugins/carousel";
-import type { RefObject } from "react";
-
+import { type RefObject } from "react";
+import "./Projects.css";
 const Projects = () => {
   const { containerRef, currentIndex, scrollToIndex, scrollProgress } =
     useCarousel(projects.length, {
@@ -27,7 +26,7 @@ const Projects = () => {
               key={project.id}
               onIndexChange={scrollToIndex}
               id={index}
-              scrollProgress={scrollProgress} // Pass it down
+              scrollProgress={scrollProgress}
             />
           ))}
         </div>
