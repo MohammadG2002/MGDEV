@@ -1,4 +1,3 @@
-import navLinks from "./navLinks";
 import LogoIcon from "../../../assets/icons/develop.svg?react";
 import "./Navbar.css";
 import { HashLink } from "react-router-hash-link";

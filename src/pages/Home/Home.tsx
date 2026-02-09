@@ -4,8 +4,7 @@ import { useCarousel } from "../../plugins/carousel";
 import type { RefObject } from "react";
 
 const Home = () => {
-  const { containerRef, currentIndex, scrollToIndex, scrollProgress } =
-    useCarousel(sections.length, {});
+  const { containerRef } = useCarousel(sections.length, {});
   return (
     <div
       className="snap-container"
