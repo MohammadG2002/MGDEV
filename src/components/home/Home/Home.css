@@ -1,8 +1,8 @@
 #home {
   display: flex;
-  height: 100vh;
+  width: fit-content;
   align-items: center;
-  padding: 0 6rem;
+  height: 100%;
 }
 
 .headline-underline {
@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   height: fit-content;
-  height: 100%;
+  width: fit-content;
 }
 
 .hero {
@@ -22,7 +22,6 @@
 .headline {
   display: flex;
   flex-direction: column;
-  min-width: 40rem;
   justify-content: center;
   overflow: visible;
 }
@@ -70,11 +69,11 @@
 .hero-img {
   display: flex;
   position: relative;
-  margin-right: 6rem;
   flex-shrink: 0;
-  max-width: 400px;
-  max-height: 450px;
+  max-width: 20rem;
+  height: auto;
   transition: filter 300ms ease;
+  margin: 0 2rem;
 }
 
 .hero-img:hover {

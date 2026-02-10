@@ -11,7 +11,9 @@ const Home = () => {
       ref={containerRef as RefObject<HTMLDivElement>}
     >
       {sections.map((section) => (
-        <section.component key={section.id} />
+        <div key={section.id} className="snap-section">
+          <section.component key={section.id} />
+        </div>
       ))}
     </div>
   );

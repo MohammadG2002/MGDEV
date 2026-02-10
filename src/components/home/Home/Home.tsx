@@ -16,7 +16,7 @@ const Home = () => {
   const fadeContent = useTransform(slowProgress, [0, 0.25, 0.5], [0, 0, 1]);
   const fadeLinks = useTransform(slowProgress, [0, 0.4, 0.5], [0, 0, 1]);
   return (
-    <section className="snap-section home" id="home">
+    <div className="home-container" id="home">
       <motion.div className="headline-underline" style={{ y }}>
         <div className="hero">
           <div className="headline">
@@ -54,7 +54,7 @@ const Home = () => {
         <img src={assets.DevelopmentImage} alt="Development Illustration" />
         <p className="dot">.</p>
       </div>
-    </section>
+    </div>
   );
 };
 
