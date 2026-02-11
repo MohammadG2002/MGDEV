@@ -47,9 +47,11 @@
 
 .skills {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  min-width: 28rem;
-  max-width: 42rem;
+  min-width: 37rem;
+  max-width: 70rem;
   height: 100%;
 }
 
