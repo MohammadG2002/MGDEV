@@ -27,7 +27,7 @@ const About = () => {
         style={{ y: underlineY, opacity: fadeHeader }}
       >
         <h1>{splitLetter("Hi, I'm Mohammad")}</h1>
-        <h1>{splitLetter("Web Developer")}</h1>
+        <h1>{splitLetter("Software Developer")}</h1>
       </motion.div>
 
       <motion.div

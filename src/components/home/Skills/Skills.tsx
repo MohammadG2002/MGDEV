@@ -28,8 +28,8 @@ const Skills = () => {
           </motion.h1>
 
           <motion.p style={{ opacity: fadeContent }}>
-            Web developer with experience in building responsive and interactive
-            web applications using React, TypeScript, and modern web
+            Software developer with experience in building responsive and
+            interactive web applications using React, TypeScript, and modern web
             technologies. Familiar with UI design, version control, and
             deployment workflows.
             <br />

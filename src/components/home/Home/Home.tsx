@@ -29,7 +29,6 @@ const Home = () => {
               className="headline-header"
               style={{ opacity: fadeHeader }}
             >
-              {splitLetter("Frontend")} <br />
               {splitLetter("Software Developer")}{" "}
             </motion.h1>
           </div>
@@ -38,9 +37,9 @@ const Home = () => {
         <div className="headline-content">
           <div className="subheadline">
             <motion.p style={{ opacity: fadeContent }}>
-              Designing and developing modern web experiences. <br />
-              I focus on usability, clean interfaces, <br />
-              and writing scalable front-end code.
+              Designing and building efficient software solutions. I focus on
+              clean architecture, performance, and writing scalable,
+              maintainable code.
             </motion.p>
           </div>
 
