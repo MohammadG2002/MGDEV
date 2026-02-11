@@ -10,6 +10,11 @@ import vscode from "../../../assets/icons/VS.svg?react";
 import cpp from "../../../assets/icons/cpp.svg?react";
 import java from "../../../assets/icons/Java.svg?react";
 import vercel from "../../../assets/icons/Vercel.svg?react";
+import n8n from "../../../assets/icons/n8n.svg?react";
+import vscommunity from "../../../assets/icons/VSCommunity.svg?react";
+import expressjs from "../../../assets/icons/expressjs.svg?react";
+import mongo from "../../../assets/icons/mongo.svg?react";
+import nodejs from "../../../assets/icons/nodejs.svg?react";
 
 const skills = [
   { image: html, name: "HTML5" },
@@ -19,11 +24,16 @@ const skills = [
   { image: react, name: "React" },
   { image: vite, name: "Vite" },
   { image: figma, name: "Figma" },
+  { image: nodejs, name: "Node.js" },
+  { image: expressjs, name: "Express.js" },
+  { image: mongo, name: "MongoDB" },
   { image: git, name: "Git" },
   { image: vscode, name: "VS Code" },
+  { image: n8n, name: "n8n" },
+  { image: vercel, name: "Vercel" },
+  { image: vscommunity, name: "VS 2022" },
   { image: cpp, name: "C++" },
   { image: java, name: "Java" },
-  { image: vercel, name: "Vercel" },
 ];
 
 export default skills;

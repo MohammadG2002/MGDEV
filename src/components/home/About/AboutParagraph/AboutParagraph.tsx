@@ -1,4 +1,5 @@
 import type { AboutParagraphsTypes } from "../../../../types/AboutParagraphsTypes";
+import "./AboutParagraph.css";
 
 interface AboutParagraphProps {
   paragraph: AboutParagraphsTypes;

@@ -51,6 +51,12 @@ export const useCarousel = (
       const container = containerRef.current;
       if (!container) return;
 
+      // Get the parent section element (the one with data-horizontal="true")
+      const section = container.closest(
+        '[data-horizontal="true"]',
+      ) as HTMLElement;
+      const wheelTarget = section || container;
+
       const handleWheel = (e: WheelEvent) => {
         e.preventDefault();
         if (isScrollingRef.current) return;
@@ -85,11 +91,11 @@ export const useCarousel = (
         }
       };
 
-      container.addEventListener("wheel", handleWheel, { passive: false });
+      wheelTarget.addEventListener("wheel", handleWheel, { passive: false });
       container.addEventListener("scroll", handleScroll);
 
       return () => {
-        container.removeEventListener("wheel", handleWheel);
+        wheelTarget.removeEventListener("wheel", handleWheel);
         container.removeEventListener("scroll", handleScroll);
       };
     } else {
@@ -119,13 +125,10 @@ export const useCarousel = (
           if (entering) {
             lastHorizontalSection = horizontalSection;
 
-            // Determine direction: if scrolling down (deltaY > 0), start at first slide
             if (e.deltaY > 0) {
-              // Entering from top - reset to first slide
               const container = horizontalSection as HTMLElement;
               container.scrollTo({ left: 0, behavior: "auto" });
             } else {
-              // Entering from bottom - set to last slide
               const container = horizontalSection as HTMLElement;
               const slideWidth = container.clientWidth;
               container.scrollTo({
@@ -138,9 +141,10 @@ export const useCarousel = (
           lastHorizontalSection = null;
         }
 
-        if (isInHorizontalSection()) return;
-
-        e.preventDefault();
+        if (isInHorizontalSection()) {
+          e.preventDefault();
+          return;
+        }
         if (isScrollingRef.current) return;
 
         if (e.deltaY > 0) {

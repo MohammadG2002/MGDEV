@@ -1,0 +1,19 @@
+.about-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about-paragraph h2 {
+  color: var(--color-aqua);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.about-paragraph p {
+  font-size: 16px;
+  line-height: 22px;
+  color: aliceblue;
+  white-space: wrap;
+  text-overflow: clip;
+}

@@ -12,10 +12,11 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-left: 5rem;
   max-width: 30rem;
   flex-shrink: 0;
-  margin-right: 5rem;
   z-index: 100;
+  flex: 1;
 }
 
 .project__buildsync-header p {
@@ -39,15 +40,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  width: fit-content;
 }
 
 .project__buildsync-images .buildsync-ipad {
-  max-width: 22rem;
+  width: clamp(14rem, 35vw, 25rem);
   height: auto;
   z-index: 1;
   filter: none;
   transition: filter 0.3s ease;
-  margin-right: 10rem;
 }
 
 .project__buildsync-images .buildsync-ipad:hover {

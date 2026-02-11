@@ -12,6 +12,7 @@
 }
 
 .snap-section[data-horizontal="true"] {
+  padding: 0;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
@@ -26,8 +27,6 @@
   flex: 0 0 auto;
   max-width: 100%;
   box-sizing: border-box;
-  background-color: red; /* Temporary */
-  outline: 2px solid #8df0cc; /* Temporary */
 }
 
 .snap-section img {

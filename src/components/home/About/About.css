@@ -32,22 +32,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 25rem;
-  margin-right: 5rem;
-}
-
-.about-content p {
-  font-size: 16px;
-  line-height: 22px;
-  color: aliceblue;
-  white-space: wrap;
-}
-
-.about-content strong {
-  color: var(--color-aqua);
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .ref {

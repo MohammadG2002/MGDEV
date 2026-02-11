@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-width: 100vw; /* Add explicit full width */
+  height: 100vh; /* Add explicit full height */
 }
 
 .projects-underline {
@@ -9,22 +11,22 @@
   justify-content: center;
   height: fit-content;
   height: 100%;
-  max-width: 100vw;
+  width: 100%;
 }
 
-.projects-container {
+.projects {
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
   justify-content: start;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   align-items: center;
   scroll-behavior: smooth;
 }
 
-.projects-container .project {
-  min-width: 100vw;
+.projects .project {
+  min-width: fit-content;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -33,10 +35,10 @@
   pointer-events: auto;
 }
 
-.projects-container > div {
+.projects > div {
   padding: 2rem;
   box-sizing: border-box;
-  min-width: 100vw;
+  min-width: 100%;
   max-width: 100vw;
   height: 50vh;
   display: flex;

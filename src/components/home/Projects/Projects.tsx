@@ -11,14 +11,10 @@ const Projects = () => {
     });
 
   return (
-    <section
-      className="snap-section projects"
-      id="projects"
-      data-horizontal="true"
-    >
+    <div className="projects-container" id="projects" data-horizontal="true">
       <div className="projects-underline" style={{ position: "relative" }}>
         <div
-          className="projects-container"
+          className="projects"
           ref={containerRef as RefObject<HTMLDivElement>}
         >
           {projects.map((project, index) => (
@@ -36,7 +32,7 @@ const Projects = () => {
           onIndexChange={scrollToIndex}
         />
       </div>
-    </section>
+    </div>
   );
 };
 
