@@ -16,6 +16,7 @@ import expressjs from "../../../assets/icons/expressjs.svg?react";
 import mongo from "../../../assets/icons/mongo.svg?react";
 import nodejs from "../../../assets/icons/nodejs.svg?react";
 import python from "../../../assets/icons/python.svg?react";
+import csharp from "../../../assets/icons/csharp.svg?react";
 
 const skills = [
   { image: html, name: "HTML5" },
@@ -33,9 +34,10 @@ const skills = [
   { image: n8n, name: "n8n" },
   { image: vercel, name: "Vercel" },
   { image: vscommunity, name: "VS 2022" },
-  { image: python, name: "Python" },
-  { image: cpp, name: "C++" },
+  { image: cpp, name: "C/C++" },
   { image: java, name: "Java" },
+  { image: python, name: "Python" },
+  { image: csharp, name: "C#" },
 ];
 
 export default skills;
