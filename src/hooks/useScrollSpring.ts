@@ -9,7 +9,23 @@ export const useScrollSpring = ({
   const isMobile = useMobileDetection();
   const progress = localProgress ?? useMotionValue(0);
 
+<<<<<<< HEAD
   // Always call all hooks, but use static values on mobile
+=======
+  // Disable spring animations on mobile - return static values
+  if (isMobile) {
+    return {
+      localProgress: progress,
+      verySlowProgress: progress,
+      slowProgress: progress,
+      mediumProgress: progress,
+      smoothProgress: progress,
+      fastProgress: progress,
+      veryFastProgress: progress,
+    };
+  }
+
+>>>>>>> 2dd8a14 (Latest)
   const verySlowProgress = useSpring(progress, {
     stiffness: 15,
     damping: 30,

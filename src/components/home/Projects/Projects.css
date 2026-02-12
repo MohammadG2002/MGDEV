@@ -76,12 +76,11 @@
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #projects {
     min-height: 100vh;
   }
-
-  .projects {
+  s .projects {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }

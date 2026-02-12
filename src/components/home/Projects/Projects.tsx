@@ -11,7 +11,11 @@ const Projects = () => {
     });
 
   return (
+<<<<<<< HEAD
     <section className="projects-container" id="projects">
+=======
+    <div className="projects-container" id="projects">
+>>>>>>> 2dd8a14 (Latest)
       <div className="projects-underline" style={{ position: "relative" }}>
         <div
           className="projects"
