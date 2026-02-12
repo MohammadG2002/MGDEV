@@ -14,6 +14,7 @@ export const useCarousel = (
   const containerRef = useRef<HTMLElement>(null!);
   const [currentIndex, setCurrentIndex] = useState(0);
   const isScrollingRef = useRef(false);
+  const isTransitioningRef = useRef(false);
   const currentSlideIndex = useMotionValue(0);
 
   const direction = config?.direction || "vertical";
@@ -61,7 +62,7 @@ export const useCarousel = (
         // Always prevent default scrolling in horizontal mode
         e.preventDefault();
 
-        if (isScrollingRef.current) return;
+        if (isScrollingRef.current || isTransitioningRef.current) return;
 
         if (e.deltaY > 0) {
           if (currentIndex < lastItem) {
@@ -127,9 +128,13 @@ export const useCarousel = (
           if (entering) {
             lastHorizontalSection = horizontalSection;
 
+            // Lock scrolling during transition
+            isTransitioningRef.current = true;
+
             if (e.deltaY > 0) {
               const container = horizontalSection as HTMLElement;
               container.scrollTo({ left: 0, behavior: "auto" });
+              updateIndex(0); // Update index to first slide
             } else {
               const container = horizontalSection as HTMLElement;
               const slideWidth = container.clientWidth;
@@ -137,9 +142,22 @@ export const useCarousel = (
                 left: (itemCount - 1) * slideWidth,
                 behavior: "auto",
               });
+              updateIndex(itemCount - 1); // Update index to last slide
             }
+
+            // Unlock after delay
+            setTimeout(() => {
+              isTransitioningRef.current = false;
+            }, 600);
           }
         } else if (!horizontalSection || !isInHorizontalSection()) {
+          // Lock when leaving horizontal section
+          if (lastHorizontalSection) {
+            isTransitioningRef.current = true;
+            setTimeout(() => {
+              isTransitioningRef.current = false;
+            }, 600);
+          }
           lastHorizontalSection = null;
         }
 
@@ -151,7 +169,7 @@ export const useCarousel = (
         // Always prevent default scrolling in vertical mode
         e.preventDefault();
 
-        if (isScrollingRef.current) return;
+        if (isScrollingRef.current || isTransitioningRef.current) return;
 
         if (e.deltaY > 0) {
           if (currentIndex < lastItem) {
