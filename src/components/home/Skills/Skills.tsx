@@ -20,7 +20,7 @@ const Skills = () => {
   const { fadeHeader, fadeContent } = useFadeAnimation(slowProgress);
 
   return (
-    <div className="skills-container" id="skills">
+    <section className="skills-container" id="skills">
       <div className="skills-content">
         <motion.div className="skills-underline" style={{ y: underlineY }}>
           <motion.h1 style={{ opacity: fadeHeader }}>
@@ -60,7 +60,7 @@ const Skills = () => {
       </div>
 
       <div className="ref" ref={ref}></div>
-    </div>
+    </section>
   );
 };
 

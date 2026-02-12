@@ -1,19 +1,37 @@
-.about-paragraph {
+.about__paragraph {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.about-paragraph h2 {
+.about__paragraph h2 {
   color: var(--color-aqua);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
-.about-paragraph p {
-  font-size: 16px;
-  line-height: 22px;
+.about__paragraph p {
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: aliceblue;
   white-space: wrap;
   text-overflow: clip;
+}
+
+@media (max-width: 1024px) {
+  .about__paragraph {
+    gap: 0.125rem;
+  }
+
+  .about__paragraph h2 {
+    font-size: 1rem;
+  }
+
+  .about__paragraph p {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: aliceblue;
+    white-space: wrap;
+    text-overflow: clip;
+  }
 }

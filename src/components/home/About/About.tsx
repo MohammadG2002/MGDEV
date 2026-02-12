@@ -21,9 +21,9 @@ const About = () => {
   const { fadeHeader, fadeContent } = useFadeAnimation(slowProgress);
 
   return (
-    <div className="about-container" id="about">
+    <section className="about" id="about">
       <motion.div
-        className="about-underline"
+        className="about__header"
         style={{ y: underlineY, opacity: fadeHeader }}
       >
         <h1>{splitLetter("Hi, I'm Mohammad")}</h1>
@@ -31,16 +31,16 @@ const About = () => {
       </motion.div>
 
       <motion.div
-        className="about-content"
+        className="about__content"
         style={{ y: contentY, opacity: fadeContent }}
       >
-        {AboutParagraphs.map((paragraph, index) => (
-          <AboutParagraph key={index} paragraph={paragraph} />
+        {AboutParagraphs.map((paragraph) => (
+          <AboutParagraph key={paragraph.id} paragraph={paragraph} />
         ))}
       </motion.div>
 
-      <div className="ref" ref={ref}></div>
-    </div>
+      <div className="about__scroll-target" ref={ref} />
+    </section>
   );
 };
 

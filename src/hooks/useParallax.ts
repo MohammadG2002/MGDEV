@@ -4,11 +4,7 @@ import { useMobileDetection } from "./useMobileDetection";
 const useParallax = (value: MotionValue<number>, distance: number) => {
   const isMobile = useMobileDetection();
 
-  if (isMobile) {
-    return value;
-  }
-
-  return useTransform(value, [0, 1], [-distance, distance]);
+  return useTransform(value, [0, 1], isMobile ? [0, 0] : [-distance, distance]);
 };
 
 export default useParallax;

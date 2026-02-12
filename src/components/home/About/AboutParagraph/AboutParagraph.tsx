@@ -6,7 +6,7 @@ interface AboutParagraphProps {
 }
 const AboutParagraph = ({ paragraph }: AboutParagraphProps) => {
   return (
-    <div className="about-paragraph">
+    <div className="about__paragraph">
       <h2>{paragraph.title}</h2>
       <p>{paragraph.content}</p>
     </div>

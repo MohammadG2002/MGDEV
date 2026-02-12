@@ -11,7 +11,7 @@ const Projects = () => {
     });
 
   return (
-    <div className="projects-container" id="projects">
+    <section className="projects-container" id="projects">
       <div className="projects-underline" style={{ position: "relative" }}>
         <div
           className="projects"
@@ -32,7 +32,7 @@ const Projects = () => {
           onIndexChange={scrollToIndex}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

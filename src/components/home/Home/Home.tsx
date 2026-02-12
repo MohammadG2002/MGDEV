@@ -10,21 +10,22 @@ import { useScrollSpring } from "../../../hooks/useScrollSpring";
 import "./Home.css";
 
 const Home = () => {
-  const ref = useRef(null);
+  const imageRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({ target: imageRef });
   const y = useParallax(scrollYProgress, 500);
   const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
 
-  const fadeHeader = useTransform(slowProgress, [0, 0.1, 0.5], [0, 0, 1]);
-  const fadeContent = useTransform(slowProgress, [0, 0.25, 0.5], [0, 0, 1]);
-  const fadeLinks = useTransform(slowProgress, [0, 0.4, 0.5], [0, 0, 1]);
+  // Fade animations - start visible at 0.5, fade out to 1
+  const fadeHeader = useTransform(slowProgress, [0.5, 0.8], [1, 0]);
+  const fadeContent = useTransform(slowProgress, [0.5, 0.7], [1, 0]);
+  const fadeLinks = useTransform(slowProgress, [0.5, 0.6], [1, 0]);
 
   return (
-    <div className="home-container" id="home">
-      <motion.div className="headline-container" style={{ y }}>
+    <section className="home" id="home">
+      <motion.div className="home__headline" style={{ y }}>
         <motion.h1 style={{ opacity: fadeHeader }}>
-          {splitLetter("Software Developer")}{" "}
+          {splitLetter("Software Developer")}
         </motion.h1>
 
         <motion.p style={{ opacity: fadeContent }}>
@@ -32,19 +33,27 @@ const Home = () => {
           architecture, performance, and writing scalable, maintainable code.
         </motion.p>
 
-        <motion.a href="#about" style={{ opacity: fadeLinks }}>
-          About Me{" "}
-          <span>
+        <motion.a
+          href="#about"
+          style={{ opacity: fadeLinks }}
+          className="home__link"
+        >
+          About Me
+          <span className="home__link-icon">
             <ArrowIcon />
           </span>
         </motion.a>
       </motion.div>
 
-      <div className="hero-image" ref={ref}>
-        <img src={assets.DevelopmentImage} alt="Development Illustration" />
-        <p className="dot">.</p>
+      <div className="home__image" ref={imageRef}>
+        <img
+          src={assets.DevelopmentImage}
+          alt="Development Illustration"
+          loading="lazy"
+        />
+        <span className="home__dot">.</span>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,4 +1,8 @@
 const splitLetter = (text: string) => {
+  if (!text || typeof text !== "string") {
+    return text;
+  }
+
   return text.split("").map((letter, index) =>
     letter === " " ? (
       " "
