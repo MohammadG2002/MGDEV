@@ -22,41 +22,25 @@ const Home = () => {
 
   return (
     <div className="home-container" id="home">
-      <motion.div className="headline-underline" style={{ y }}>
-        <div className="hero">
-          <div className="headline">
-            <motion.h1
-              className="headline-header"
-              style={{ opacity: fadeHeader }}
-            >
-              {splitLetter("Software Developer")}{" "}
-            </motion.h1>
-          </div>
-        </div>
+      <motion.div className="headline-container" style={{ y }}>
+        <motion.h1 style={{ opacity: fadeHeader }}>
+          {splitLetter("Software Developer")}{" "}
+        </motion.h1>
 
-        <div className="headline-content">
-          <div className="subheadline">
-            <motion.p style={{ opacity: fadeContent }}>
-              Designing and building efficient software solutions. I focus on
-              clean architecture, performance, and writing scalable,
-              maintainable code.
-            </motion.p>
-          </div>
+        <motion.p style={{ opacity: fadeContent }}>
+          Designing and building efficient software solutions. I focus on clean
+          architecture, performance, and writing scalable, maintainable code.
+        </motion.p>
 
-          <motion.a
-            href="#about"
-            className="about-link"
-            style={{ opacity: fadeLinks }}
-          >
-            About Me{" "}
-            <span>
-              <ArrowIcon />
-            </span>
-          </motion.a>
-        </div>
+        <motion.a href="#about" style={{ opacity: fadeLinks }}>
+          About Me{" "}
+          <span>
+            <ArrowIcon />
+          </span>
+        </motion.a>
       </motion.div>
 
-      <div className="hero-img" ref={ref}>
+      <div className="hero-image" ref={ref}>
         <img src={assets.DevelopmentImage} alt="Development Illustration" />
         <p className="dot">.</p>
       </div>

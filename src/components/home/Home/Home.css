@@ -5,42 +5,32 @@
   height: 100%;
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.headline {
+.headline-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: visible;
   align-items: start;
+  gap: 2rem;
+  max-width: 35rem;
 }
 
-.headline-header {
+.headline-container h1 {
   font-size: 3.5rem;
   line-height: 4rem;
   color: aliceblue;
   overflow: visible;
-  max-width: 35rem;
+  max-width: 100%;
 }
 
-.subheadline {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0;
-}
-
-.subheadline p {
+.headline-container p {
   font-size: 18px;
   line-height: 24px;
   color: aliceblue;
-  max-width: 35rem;
+  max-width: 100%;
 }
 
-.about-link {
+.headline-container a {
   display: flex;
   font-size: 1.25rem;
   color: var(--color-aqua);
@@ -49,7 +39,7 @@
   height: 2rem;
 }
 
-.about-link span {
+.headline-container a span {
   display: flex;
   align-items: center;
   margin: 0.5rem;
@@ -57,11 +47,11 @@
   transition: transform 300ms ease;
 }
 
-.about-link:hover span {
+.headline-container a:hover span {
   transform: rotate(90deg);
 }
 
-.hero-img {
+.hero-image {
   display: flex;
   position: relative;
   flex-shrink: 0;
@@ -71,11 +61,11 @@
   margin: 0 2rem;
 }
 
-.hero-img:hover {
+.hero-image:hover {
   filter: drop-shadow(var(--shadow-aqua));
 }
 
-.hero-img .dot {
+.hero-image .dot {
   position: absolute;
   font-size: 30px;
   color: var(--color-aqua);

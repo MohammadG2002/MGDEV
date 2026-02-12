@@ -56,6 +56,30 @@ h1 span:hover {
   text-shadow: var(--neon-aqua);
 }
 
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h1 span {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  h1 span {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

@@ -1,11 +1,26 @@
 import { MotionValue, useMotionValue, useSpring } from "framer-motion";
+import { useMobileDetection } from "./useMobileDetection";
 
 export const useScrollSpring = ({
   localProgress,
 }: {
   localProgress?: MotionValue<number>;
 } = {}) => {
+  const isMobile = useMobileDetection();
   const progress = localProgress ?? useMotionValue(0);
+
+  // Disable spring animations on mobile - return static values
+  if (isMobile) {
+    return {
+      localProgress: progress,
+      verySlowProgress: progress,
+      slowProgress: progress,
+      mediumProgress: progress,
+      smoothProgress: progress,
+      fastProgress: progress,
+      veryFastProgress: progress,
+    };
+  }
 
   const verySlowProgress = useSpring(progress, {
     stiffness: 15,

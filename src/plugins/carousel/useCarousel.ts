@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useMotionValue } from "framer-motion";
+import { useMobileDetection } from "../../hooks/useMobileDetection";
 import type { ItemScrollConfig, CarouselReturn } from "./types";
 
 const scrollToSection = (sectionId: string) => {
@@ -16,6 +17,7 @@ export const useCarousel = (
   const isScrollingRef = useRef(false);
   const isTransitioningRef = useRef(false);
   const currentSlideIndex = useMotionValue(0);
+  const isMobile = useMobileDetection();
 
   const direction = config?.direction || "vertical";
   const lastItem = itemCount - 1;
@@ -48,6 +50,10 @@ export const useCarousel = (
   };
 
   useEffect(() => {
+    // Disable carousel entirely on mobile/tablet
+    if (isMobile) {
+      return;
+    }
     if (direction === "horizontal") {
       const container = containerRef.current;
       if (!container) return;
@@ -222,5 +228,6 @@ export const useCarousel = (
     scrollToIndex: scrollToItem,
     scrollToLast: () => scrollToItem(lastItem),
     scrollProgress: currentSlideIndex,
+    isMobile,
   };
 };

@@ -11,7 +11,7 @@ const Projects = () => {
     });
 
   return (
-    <div className="projects-container" id="projects" data-horizontal="true">
+    <div className="projects-container" id="projects">
       <div className="projects-underline" style={{ position: "relative" }}>
         <div
           className="projects"

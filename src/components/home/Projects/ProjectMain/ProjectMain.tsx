@@ -1,7 +1,7 @@
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
 import "./ProjectMain.css";
 import splitLetter from "../../../../utils/splitLetter";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+import { motion, MotionValue, useScroll } from "motion/react";
 import { useRef } from "react";
 import useParallax from "../../../../hooks/useParallax";
 import { useScrollSpring } from "../../../../hooks/useScrollSpring";
@@ -26,12 +26,10 @@ const ProjectMain = ({
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 500);
   const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
-  const { slowProgress: slideProgress } = useScrollSpring({ localProgress });
   const { fadeHeader, fadeContent, fadeLinks } = useFadeAnimation(slowProgress);
-  const x = useTransform(slideProgress, [0, 1], [100, 0]);
   return (
     <div className="project-main">
-      <motion.div className="project__main-header" style={{ y, x }}>
+      <motion.div className="project__main-header" style={{ y }}>
         <motion.h1 style={{ opacity: fadeHeader }}>
           {splitLetter("My Projects")}
         </motion.h1>

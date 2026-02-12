@@ -13,4 +13,5 @@ export interface CarouselReturn {
   scrollToIndex: (index: number) => void;
   scrollToLast: () => void;
   scrollProgress: MotionValue<number>;
+  isMobile: boolean;
 }

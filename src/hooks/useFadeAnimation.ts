@@ -1,6 +1,23 @@
 import { MotionValue, useTransform } from "framer-motion";
+import { useMobileDetection } from "./useMobileDetection";
 
 export const useFadeAnimation = (progress: MotionValue<number>) => {
+  const isMobile = useMobileDetection();
+
+  // Disable animations on mobile - return static values
+  if (isMobile) {
+    const fadeMobile = useTransform(progress, [0, 0.5, 1], [0, 1, 0]);
+    return {
+      fadeHeader: fadeMobile,
+      fadeContent: fadeMobile,
+      fadeLinks: fadeMobile,
+      fadeHeaderX: progress,
+      fadeContentX: progress,
+      fadeLinksX: progress,
+      phoneX: progress,
+    };
+  }
+
   const fadeHeader = useTransform(
     progress,
     [0, 0.15, 0.5, 0.85, 1],
