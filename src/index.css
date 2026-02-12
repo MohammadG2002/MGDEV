@@ -9,6 +9,8 @@
   text-decoration: none;
   color: black;
   font-weight: var(--font-regular);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body,

@@ -58,34 +58,21 @@ export const useCarousel = (
       const wheelTarget = section || container;
 
       const handleWheel = (e: WheelEvent) => {
-        const shouldPreventDefault =
-          (e.deltaY > 0 && currentIndex < lastItem) ||
-          (e.deltaY < 0 && currentIndex > 0) ||
-          (e.deltaY > 0 &&
-            currentIndex === lastItem &&
-            config?.onLastItemScroll) ||
-          (e.deltaY < 0 && currentIndex === 0 && config?.onFirstItemScroll);
-
-        if (shouldPreventDefault) {
-          e.preventDefault();
-        }
+        // Always prevent default scrolling in horizontal mode
+        e.preventDefault();
 
         if (isScrollingRef.current) return;
 
         if (e.deltaY > 0) {
           if (currentIndex < lastItem) {
-            e.preventDefault();
             scrollToItem(currentIndex + 1);
           } else if (config?.onLastItemScroll) {
-            e.preventDefault();
             scrollToSection(config.onLastItemScroll);
           }
         } else if (e.deltaY < 0) {
           if (currentIndex > 0) {
-            e.preventDefault();
             scrollToItem(currentIndex - 1);
           } else if (config?.onFirstItemScroll) {
-            e.preventDefault();
             scrollToSection(config.onFirstItemScroll);
           }
         }
@@ -160,31 +147,19 @@ export const useCarousel = (
           e.preventDefault();
           return;
         }
+
+        // Always prevent default scrolling in vertical mode
+        e.preventDefault();
+
         if (isScrollingRef.current) return;
 
-        // Prevent overscroll in vertical mode
-        const atFirstItem = currentIndex === 0;
-        const atLastItem = currentIndex === lastItem;
-        const scrollingDown = e.deltaY > 0;
-        const scrollingUp = e.deltaY < 0;
-
-        const shouldPreventDefault =
-          (scrollingDown && !atLastItem) ||
-          (scrollingUp && !atFirstItem) ||
-          (scrollingDown && atLastItem && config?.onLastItemScroll) ||
-          (scrollingUp && atFirstItem && config?.onFirstItemScroll);
-
-        if (shouldPreventDefault) {
-          e.preventDefault();
-        }
-
-        if (scrollingDown) {
+        if (e.deltaY > 0) {
           if (currentIndex < lastItem) {
             scrollToItem(currentIndex + 1);
           } else if (config?.onLastItemScroll) {
             scrollToSection(config.onLastItemScroll);
           }
-        } else if (scrollingUp) {
+        } else if (e.deltaY < 0) {
           if (currentIndex > 0) {
             scrollToItem(currentIndex - 1);
           } else if (config?.onFirstItemScroll) {
