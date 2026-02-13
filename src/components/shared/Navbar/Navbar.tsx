@@ -9,7 +9,7 @@ const Navbar = () => {
   const isMobile = useMobileDetection();
   return (
     <nav className="navbar">
-      <HashLink to="#home" className="navbar__logo">
+      <HashLink to="/home" className="navbar__logo">
         <LogoIcon />
         MGDev
       </HashLink>

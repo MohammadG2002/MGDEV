@@ -5,14 +5,14 @@ import splitLetter from "../../../utils/splitLetter";
 import "./Hero.css";
 import { useStaggeredInView } from "../../../hooks/useStaggeredInView";
 
-const Hero = () => {
+const hero = () => {
   const { ref, headerProps, contentProps, linksProps } = useStaggeredInView({
     baseDelay: 0,
     staggerDelay: 0.15,
   });
   return (
-    <section className="Hero" id="home" ref={ref}>
-      <div className="Hero__headline">
+    <section className="hero" id="home" ref={ref}>
+      <div className="hero__headline">
         <motion.h1 {...headerProps}>
           {splitLetter("Software Developer")}
         </motion.h1>
@@ -24,22 +24,22 @@ const Hero = () => {
 
         <motion.a href="#about" {...linksProps}>
           About Me
-          <span className="Hero__link-icon">
+          <span className="hero__link-icon">
             <ArrowIcon />
           </span>
         </motion.a>
       </div>
 
-      <div className="Hero__image">
+      <div className="hero__image">
         <img
           src={assets.DevelopmentImage}
           alt="Development Illustration"
           loading="lazy"
         />
-        <span className="Hero__dot">.</span>
+        <span className="hero__dot">.</span>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default hero;

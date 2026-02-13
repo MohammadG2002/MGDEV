@@ -1,11 +1,11 @@
-.Hero {
+.hero {
   display: flex;
   align-items: center;
   height: 100%;
   gap: 2rem;
 }
 
-.Hero__headline {
+.hero__headline {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,18 +14,18 @@
   max-width: 35rem;
 }
 
-.Hero__headline h1 {
+.hero__headline h1 {
   line-height: 4rem;
   color: aliceblue;
 }
 
-.Hero__headline p {
+.hero__headline p {
   font-size: 1.125rem;
   line-height: 1.6;
   color: aliceblue;
 }
 
-.Hero__headline a {
+.hero__headline a {
   display: flex;
   align-items: center;
   font-size: 1.25rem;
@@ -33,29 +33,29 @@
   text-decoration: none;
 }
 
-.Hero__headline a span {
+.hero__headline a span {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
   transition: transform 300ms ease;
 }
 
-.Hero__headline a:hover span {
+.hero__headline a:hover span {
   transform: rotate(90deg);
 }
 
-.Hero__image {
+.hero__image {
   position: relative;
   max-width: 400px;
   flex-shrink: 0;
   transition: filter 300ms ease;
 }
 
-.Hero__image:hover {
+.hero__image:hover {
   filter: drop-shadow(var(--shadow-aqua));
 }
 
-.Hero__dot {
+.hero__dot {
   position: absolute;
   bottom: 170px;
   left: 174px;
@@ -78,50 +78,50 @@
 }
 
 @media (max-width: 1024px) {
-  .Hero__headline {
+  .hero__headline {
     gap: 1.5rem;
     max-width: 100%;
   }
 
-  .Hero__headline h1 {
+  .hero__headline h1 {
     line-height: 2.5rem;
   }
 
-  .Hero__headline p {
+  .hero__headline p {
     font-size: 1rem;
     line-height: 1.3;
   }
 
-  .Hero__headline a {
+  .hero__headline a {
     font-size: 1.125rem;
   }
 }
 
 @media (max-width: 767px) {
-  .Hero {
+  .hero {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4rem;
   }
 
-  .Hero__headline {
+  .hero__headline {
     gap: 1.5rem;
     max-width: 100%;
     order: 1;
   }
 
-  .Hero__headline h1 {
+  .hero__headline h1 {
     font-size: 2.5rem;
     line-height: 2.5rem;
   }
 
-  .Hero__headline p {
+  .hero__headline p {
     font-size: 1rem;
     line-height: 1.3;
   }
 
-  .Hero__headline a {
+  .hero__headline a {
     font-size: 1.125rem;
   }
 }
