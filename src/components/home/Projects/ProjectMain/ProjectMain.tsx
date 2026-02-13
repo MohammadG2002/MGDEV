@@ -6,22 +6,11 @@ import { useRef } from "react";
 import useParallax from "../../../../hooks/useParallax";
 import { useScrollSpring } from "../../../../hooks/useScrollSpring";
 import { useFadeAnimation } from "../../../../hooks/useFadeAnimation";
-import { useSlideProgress } from "../../../../hooks/useSlideProgress";
 
 interface projectMainProps {
   id: number;
-  onIndexChange?: (index: number) => void;
-  scrollProgress: MotionValue<number>;
 }
-const ProjectMain = ({
-  scrollProgress,
-  id,
-  onIndexChange,
-}: projectMainProps) => {
-  const { localProgress } = useScrollSpring();
-
-  // Automatically detect when this slide is active
-  useSlideProgress(scrollProgress, id, localProgress);
+const ProjectMain = ({ id }: projectMainProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 500);
@@ -37,10 +26,7 @@ const ProjectMain = ({
           This section presents an overview of projects I have worked on,
           demonstrating a range of skills, tools, and development approaches.
         </motion.p>
-        <motion.button
-          onClick={() => onIndexChange && onIndexChange(id + 1)}
-          style={{ opacity: fadeLinks }}
-        >
+        <motion.button style={{ opacity: fadeLinks }}>
           View Projects{" "}
           <span>
             <ArrowRight />

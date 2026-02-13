@@ -68,11 +68,7 @@ h1 span:hover {
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 767px) {
-=======
-@media (max-width: 768px) {
->>>>>>> 2dd8a14 (Latest)
   h1 {
     font-size: 24px;
     line-height: 24px;

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./ProjectBuildSync.css";
 import type { MotionValue } from "motion";
-import { motion, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import assets from "../../../../assets/assets";
 import splitLetter from "../../../../utils/splitLetter";
 import { useScrollSpring } from "../../../../hooks/useScrollSpring";
@@ -9,19 +9,17 @@ import { useSlideProgress } from "../../../../hooks/useSlideProgress";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
 import { useFadeAnimation } from "../../../../hooks/useFadeAnimation";
+import useParallax from "../../../../hooks/useParallax";
 
 interface ProjectBuildSyncProps {
-  scrollProgress: MotionValue<number>;
   id: number;
 }
 
-const ProjectBuildSync = ({ scrollProgress, id }: ProjectBuildSyncProps) => {
+const ProjectBuildSync = ({ id }: ProjectBuildSyncProps) => {
   const ref = useRef(null);
-
-  const { slowProgress, localProgress } = useScrollSpring();
-
-  // Automatically detect when this slide is active
-  useSlideProgress(scrollProgress, id, localProgress);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 500);
+  const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
 
   // Transform to phone movement
   const phoneX = useTransform(slowProgress, [0, 1], [150, 0]);

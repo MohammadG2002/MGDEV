@@ -4,16 +4,16 @@ import ProjectMain from "./ProjectMain/ProjectMain";
 
 const projects = [
   {
+    id: 1,
     component: ProjectMain,
-    id: "project-main",
   },
   {
+    id: 2,
     component: ProjectKanban,
-    id: "project-kanban",
   },
   {
+    id: 3,
     component: ProjectBuildSync,
-    id: "project-buildsync",
   },
 ];
 

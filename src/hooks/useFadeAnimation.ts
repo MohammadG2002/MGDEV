@@ -4,10 +4,6 @@ import { useMobileDetection } from "./useMobileDetection";
 export const useFadeAnimation = (progress: MotionValue<number>) => {
   const isMobile = useMobileDetection();
 
-<<<<<<< HEAD
-  // Always call all hooks, but use different values on mobile vs desktop
-  const fadeMobile = useTransform(progress, [0, 0.5, 1], [0, 1, 0]);
-=======
   // Disable animations on mobile - return static values
   if (isMobile) {
     const fadeMobile = useTransform(progress, [0, 0.5, 1], [0, 1, 0]);
@@ -21,7 +17,6 @@ export const useFadeAnimation = (progress: MotionValue<number>) => {
       phoneX: progress,
     };
   }
->>>>>>> 2dd8a14 (Latest)
 
   const fadeHeader = useTransform(
     progress,
@@ -45,9 +40,6 @@ export const useFadeAnimation = (progress: MotionValue<number>) => {
 
   // Return mobile values on mobile, desktop values on desktop
   return {
-    fadeHeader: isMobile ? fadeMobile : fadeHeader,
-    fadeContent: isMobile ? fadeMobile : fadeContent,
-    fadeLinks: isMobile ? fadeMobile : fadeLinks,
     fadeHeaderX: isMobile ? progress : fadeHeaderX,
     fadeContentX: isMobile ? progress : fadeContentX,
     fadeLinksX: isMobile ? progress : fadeLinksX,

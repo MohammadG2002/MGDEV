@@ -1,26 +1,23 @@
 import { useRef } from "react";
 import "./ProjectKanban.css";
-import { motion, useTransform } from "framer-motion";
-import type { MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import assets from "../../../../assets/assets";
 import splitLetter from "../../../../utils/splitLetter";
 import { useScrollSpring } from "../../../../hooks/useScrollSpring";
-import { useSlideProgress } from "../../../../hooks/useSlideProgress";
 import { useFadeAnimation } from "../../../../hooks/useFadeAnimation";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
+import useParallax from "../../../../hooks/useParallax";
 
 interface projectKanbanProps {
-  scrollProgress: MotionValue<number>;
   id: number;
 }
 
-const ProjectKanban = ({ scrollProgress, id }: projectKanbanProps) => {
+const ProjectKanban = ({ id }: projectKanbanProps) => {
   const ref = useRef(null);
-  const { slowProgress, localProgress } = useScrollSpring();
-
-  // Automatically detect when this slide is active
-  useSlideProgress(scrollProgress, id, localProgress);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 500);
+  const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
   const { fadeHeaderX, fadeContentX, fadeLinksX } =
     useFadeAnimation(slowProgress);
   const phoneX = useTransform(slowProgress, [0, 1], [150, 0]);
