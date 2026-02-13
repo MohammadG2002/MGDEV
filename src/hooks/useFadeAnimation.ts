@@ -40,6 +40,9 @@ export const useFadeAnimation = (progress: MotionValue<number>) => {
 
   // Return mobile values on mobile, desktop values on desktop
   return {
+    fadeHeader: isMobile ? progress : fadeHeader,
+    fadeContent: isMobile ? progress : fadeContent,
+    fadeLinks: isMobile ? progress : fadeLinks,
     fadeHeaderX: isMobile ? progress : fadeHeaderX,
     fadeContentX: isMobile ? progress : fadeContentX,
     fadeLinksX: isMobile ? progress : fadeLinksX,

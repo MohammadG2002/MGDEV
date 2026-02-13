@@ -4,11 +4,8 @@ import assets from "../../../../assets/assets";
 import splitLetter from "../../../../utils/splitLetter";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
-interface ProjectBuildSyncProps {
-  id: number;
-}
 
-const ProjectBuildSync = ({ id }: ProjectBuildSyncProps) => {
+const ProjectBuildSync = () => {
   return (
     <div className="project__buildsync">
       <motion.div className="project__buildsync-images">

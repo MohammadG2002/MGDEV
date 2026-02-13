@@ -4,11 +4,8 @@ import assets from "../../../../assets/assets";
 import splitLetter from "../../../../utils/splitLetter";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
-interface projectKanbanProps {
-  id: number;
-}
 
-const ProjectKanban = ({ id }: projectKanbanProps) => {
+const ProjectKanban = () => {
   return (
     <div className="project__kanban">
       <div className="project__kanban-header">

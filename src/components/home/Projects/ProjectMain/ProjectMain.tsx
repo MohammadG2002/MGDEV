@@ -3,10 +3,7 @@ import "./ProjectMain.css";
 import splitLetter from "../../../../utils/splitLetter";
 import { motion } from "motion/react";
 
-interface projectMainProps {
-  id: number;
-}
-const ProjectMain = ({ id }: projectMainProps) => {
+const ProjectMain = () => {
   return (
     <div className="project-main">
       <motion.div className="project__main-header">
