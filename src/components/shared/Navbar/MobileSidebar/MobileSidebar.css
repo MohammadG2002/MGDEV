@@ -1,0 +1,129 @@
+.mobile-sidebar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-sidebar__toggle svg {
+  width: 3rem;
+  height: auto;
+  fill: aliceblue;
+}
+
+.mobile-sidebar__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease;
+  z-index: 10000;
+}
+
+.mobile-sidebar--open {
+  right: 0;
+}
+
+.mobile-sidebar__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 5rem 2rem 2rem;
+}
+
+.mobile-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.mobile-sidebar__link {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-sidebar__link:hover {
+  color: var(--color-lava);
+}
+
+.mobile-sidebar__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  border: 2px solid aliceblue;
+  background-color: transparent;
+  color: aliceblue;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.mobile-sidebar__contact:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .mobile-sidebar__toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mobile-sidebar__toggle svg {
+    width: 2.5rem;
+  }
+
+  .mobile-sidebar {
+    width: 80%;
+    max-width: 280px;
+  }
+
+  .mobile-sidebar__content {
+    padding: 4rem 1.5rem 1.5rem;
+  }
+
+  .mobile-sidebar__nav {
+    gap: 1.5rem;
+  }
+
+  .mobile-sidebar__link {
+    font-size: 1.3rem;
+  }
+
+  .mobile-sidebar__contact {
+    font-size: 1.1rem;
+    padding: 0.65rem 1.5rem;
+  }
+}

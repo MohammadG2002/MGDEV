@@ -25,7 +25,7 @@
   color: aliceblue;
 }
 
-.Hero__link {
+.Hero__headline a {
   display: flex;
   align-items: center;
   font-size: 1.25rem;
@@ -33,14 +33,14 @@
   text-decoration: none;
 }
 
-.Hero__link-icon {
+.Hero__headline a span {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
   transition: transform 300ms ease;
 }
 
-.Hero__link:hover .Hero__link-icon {
+.Hero__headline a:hover span {
   transform: rotate(90deg);
 }
 
@@ -92,7 +92,7 @@
     line-height: 1.3;
   }
 
-  .Hero__link {
+  .Hero__headline a {
     font-size: 1.125rem;
   }
 }
@@ -121,7 +121,7 @@
     line-height: 1.3;
   }
 
-  .Hero__link {
+  .Hero__headline a {
     font-size: 1.125rem;
   }
 }

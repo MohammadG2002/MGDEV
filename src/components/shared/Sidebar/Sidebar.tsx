@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import useActiveSection from "../../../hooks/useActiveSection";
-import { useMobileDetection } from "../../../hooks/useMobileDetection";
+import useMobileDetection from "../../../hooks/useMobileDetection";
 import pagination from "./pagination";
 import "./Sidebar.css";
 

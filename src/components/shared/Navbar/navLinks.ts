@@ -1,8 +1,8 @@
-const NavItems = [
+const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
 ];
 
-export default NavItems;
+export default navLinks;

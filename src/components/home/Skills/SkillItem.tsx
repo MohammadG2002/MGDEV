@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import Skill from "./Skill/Skill";
 import type { FC, SVGProps } from "react";
+import { useStaggeredInView } from "../../../hooks/useStaggeredInView";
 
 interface SkillItemProps {
   image: FC<SVGProps<SVGSVGElement>>;
@@ -10,23 +10,12 @@ interface SkillItemProps {
 }
 
 const SkillItem = ({ image, name, index }: SkillItemProps) => {
-  const skillRef = useRef(null);
-  const isInView = useInView(skillRef, {
-    amount: 0.5,
-    margin: "0px 0px 500px 0px",
+  const { ref, createItemProps } = useStaggeredInView({
+    staggerDelay: 0.1,
   });
 
   return (
-    <motion.div
-      ref={skillRef}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      initial={{ opacity: 0, y: 10 }}
-      transition={{
-        delay: isInView ? index * 0.1 + 1 : 0,
-        duration: 0.4,
-        ease: "easeOut",
-      }}
-    >
+    <motion.div ref={ref} {...createItemProps(index)} className="skill-item">
       <Skill image={image} name={name} />
     </motion.div>
   );

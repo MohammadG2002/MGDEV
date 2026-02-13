@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useMobileDetection = () => {
+const useMobileDetection = () => {
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.innerWidth <= 1024;
@@ -17,3 +17,5 @@ export const useMobileDetection = () => {
 
   return isMobile;
 };
+
+export default useMobileDetection;

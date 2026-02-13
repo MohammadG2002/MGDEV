@@ -1,9 +1,12 @@
 import LogoIcon from "../../../assets/icons/develop.svg?react";
 import "./Navbar.css";
 import { HashLink } from "react-router-hash-link";
-import NavItems from "./NavItems";
+import navLinks from "./navLinks";
+import useMobileDetection from "../../../hooks/useMobileDetection";
+import MobileSidebar from "./MobileSidebar/MobileSidebar";
 
 const Navbar = () => {
+  const isMobile = useMobileDetection();
   return (
     <nav className="navbar">
       <HashLink to="#home" className="navbar__logo">
@@ -12,7 +15,7 @@ const Navbar = () => {
       </HashLink>
 
       <div className="navbar__links">
-        {NavItems.map((item) => (
+        {navLinks.map((item) => (
           <HashLink
             key={item.name}
             to={item.href}
@@ -24,9 +27,13 @@ const Navbar = () => {
         ))}
       </div>
 
-      <HashLink to="#contact" className="navbar__contact">
-        Contact
-      </HashLink>
+      {isMobile ? (
+        <MobileSidebar />
+      ) : (
+        <HashLink to="#contact" className="navbar__contact">
+          Contact
+        </HashLink>
+      )}
     </nav>
   );
 };

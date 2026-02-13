@@ -43,6 +43,7 @@
   color: aliceblue;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-shadow: 0 0 5px var(--bg-color);
 }
 
 .navbar__link:hover {
@@ -79,11 +80,7 @@
   }
 
   .navbar__links {
-    gap: 1.5rem;
-  }
-
-  .navbar__link {
-    font-size: 1rem;
+    display: none;
   }
 }
 
@@ -98,10 +95,6 @@
 
   .navbar__logo svg {
     width: 2.5rem;
-  }
-
-  .navbar__links {
-    display: none;
   }
 
   .navbar__contact {
