@@ -1,10 +1,6 @@
-import { useRef } from "react";
-import { motion, useScroll } from "motion/react";
+import { motion } from "motion/react";
 
 import splitLetter from "../../../utils/splitLetter";
-import useParallax from "../../../hooks/useParallax";
-import { useScrollSpring } from "../../../hooks/useScrollSpring";
-import { useFadeAnimation } from "../../../hooks/useFadeAnimation";
 
 import SkillItem from "./SkillItem";
 import skills from "./skills";
@@ -12,22 +8,13 @@ import skills from "./skills";
 import "./Skills.css";
 
 const Skills = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const underlineY = useParallax(scrollYProgress, 500);
-  const skillsY = useParallax(scrollYProgress, 250);
-  const { slowProgress } = useScrollSpring({ localProgress: scrollYProgress });
-  const { fadeHeader, fadeContent } = useFadeAnimation(slowProgress);
-
   return (
     <section className="skills-container" id="skills">
       <div className="skills-content">
-        <motion.div className="skills-underline" style={{ y: underlineY }}>
-          <motion.h1 style={{ opacity: fadeHeader }}>
-            {splitLetter("Skills & Experience")}
-          </motion.h1>
+        <motion.div className="skills-underline">
+          <motion.h1>{splitLetter("Skills & Experience")}</motion.h1>
 
-          <motion.p style={{ opacity: fadeContent }}>
+          <motion.p>
             Software developer with experience in building responsive and
             interactive web applications using React, TypeScript, and modern web
             technologies. Familiar with UI design, version control, and
@@ -45,7 +32,7 @@ const Skills = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div style={{ y: skillsY }}>
+        <motion.div>
           <div className="skills">
             {skills.map((skill, index) => (
               <SkillItem
@@ -59,7 +46,7 @@ const Skills = () => {
         </motion.div>
       </div>
 
-      <div className="ref" ref={ref}></div>
+      <div className="ref" />
     </section>
   );
 };
