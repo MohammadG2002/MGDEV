@@ -25,7 +25,7 @@ const App = () => {
           <Route
             path="/projects"
             element={
-              <Layout>
+              <Layout isProject>
                 <Projects />
               </Layout>
             }

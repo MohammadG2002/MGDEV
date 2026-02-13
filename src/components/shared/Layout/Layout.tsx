@@ -5,15 +5,16 @@ import "./Layout.css";
 
 interface LayoutProps {
   children: ReactNode;
+  isProject?: boolean;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, isProject }: LayoutProps) => {
   return (
     <div className="layout">
       <Navbar />
       <div className="layout-container">
         <main className="main-content">{children}</main>
-        <Sidebar />
+        <Sidebar isProject={isProject} />
       </div>
     </div>
   );

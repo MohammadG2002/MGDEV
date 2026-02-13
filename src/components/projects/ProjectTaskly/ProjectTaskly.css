@@ -1,4 +1,4 @@
-.project__kanban {
+.project__Taskly {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-.project__kanban-header {
+.project__Taskly-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,14 +19,14 @@
   flex-shrink: 0;
 }
 
-.project__kanban-header p {
+.project__Taskly-header p {
   font-size: 18px;
   line-height: 24px;
   color: aliceblue;
   text-align: center;
 }
 
-.project__kanban-header p strong {
+.project__Taskly-header p strong {
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-.project__kanban-images {
+.project__Taskly-images {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -42,7 +42,7 @@
   position: relative;
 }
 
-.project__kanban-images .taskly-laptop {
+.project__Taskly-images .taskly-laptop {
   width: clamp(16rem, 40vw, 40rem);
   height: auto;
   margin-right: clamp(1rem, 5vw, 5rem);
@@ -51,7 +51,7 @@
   transition: filter 0.3s ease;
 }
 
-.project__kanban-images .taskly-laptop:hover {
+.project__Taskly-images .taskly-laptop:hover {
   filter: drop-shadow(var(--neon-aqua));
 }
 
@@ -64,7 +64,7 @@
   height: fit-content;
 }
 
-.project__kanban-images .taskly-phone {
+.project__Taskly-images .taskly-phone {
   height: auto;
   width: clamp(9rem, 25vw, 25rem);
   transform: rotate(-25deg);
@@ -74,6 +74,6 @@
   transition: filter 0.3s ease;
 }
 
-.project__kanban-images .taskly-phone:hover {
+.project__Taskly-images .taskly-phone:hover {
   filter: drop-shadow(var(--neon-aqua));
 }

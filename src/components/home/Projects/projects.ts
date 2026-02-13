@@ -1,5 +1,5 @@
-import ProjectBuildSync from "./ProjectBuildSync/ProjectBuildSync";
-import ProjectKanban from "./ProjectKanban/ProjectKanban";
+import ProjectBuildSync from "../../projects/ProjectBuildSync/ProjectBuildSync";
+import ProjectKanban from "../../projects/ProjectTaskly/ProjectTaskly";
 
 const projects = [
   {

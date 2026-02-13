@@ -1,9 +1,9 @@
 import "./ProjectBuildSync.css";
 import { motion } from "motion/react";
-import assets from "../../../../assets/assets";
-import splitLetter from "../../../../utils/splitLetter";
+import assets from "../../../assets/assets";
+import splitLetter from "../../../utils/splitLetter";
 import { Link } from "react-router-dom";
-import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
+import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
 
 const ProjectBuildSync = () => {
   return (

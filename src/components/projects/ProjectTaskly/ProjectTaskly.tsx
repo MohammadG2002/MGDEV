@@ -1,17 +1,17 @@
-import "./ProjectKanban.css";
+import "./ProjectTaskly.css";
 import { motion } from "framer-motion";
-import assets from "../../../../assets/assets";
-import splitLetter from "../../../../utils/splitLetter";
+import assets from "../../../assets/assets";
+import splitLetter from "../../../utils/splitLetter";
 import { Link } from "react-router-dom";
-import ArrowRight from "../../../../assets/icons/arrow-right.svg?react";
+import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
 
-const ProjectKanban = () => {
+const ProjectTaskly = () => {
   return (
-    <div className="project__kanban">
-      <div className="project__kanban-header">
+    <div className="project__taskly">
+      <div className="project__taskly-header">
         <motion.h1>{splitLetter("Taskly")}</motion.h1>
         <motion.p>
-          Taskly is a frontend Kanban-style task management interface built with
+          Taskly is a frontend taskly-style task management interface built with
           <strong> React </strong>and<strong> TypeScript</strong>. <br /> It
           demonstrates interactive task organization and workflow management
           using mock data, focusing on responsive design and smooth UI
@@ -40,7 +40,7 @@ const ProjectKanban = () => {
           </Link>
         </motion.div>
       </div>
-      <motion.div className="project__kanban-images">
+      <motion.div className="project__taskly-images">
         <img
           src={assets.tasklyLaptop}
           alt="Taskly on Laptop"
@@ -58,4 +58,4 @@ const ProjectKanban = () => {
   );
 };
 
-export default ProjectKanban;
+export default ProjectTaskly;
