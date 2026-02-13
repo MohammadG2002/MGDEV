@@ -1,7 +1,6 @@
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import type { AboutParagraphsTypes } from "../../../../types/AboutParagraphsTypes";
 import "./AboutParagraph.css";
-import { useRef } from "react";
 import { useStaggeredInView } from "../../../../hooks/useStaggeredInView";
 
 interface AboutParagraphProps {
