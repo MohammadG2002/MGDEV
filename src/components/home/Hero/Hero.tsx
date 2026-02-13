@@ -4,12 +4,12 @@ import ArrowIcon from "../../../assets/icons/arrow-right.svg?react";
 import assets from "../../../assets/assets";
 import splitLetter from "../../../utils/splitLetter";
 
-import "./Home.css";
+import "./Hero.css";
 
-const Home = () => {
+const Hero = () => {
   return (
-    <section className="home" id="home">
-      <motion.div className="home__headline">
+    <section className="Hero" id="home">
+      <motion.div className="Hero__headline">
         <motion.h1>{splitLetter("Software Developer")}</motion.h1>
 
         <motion.p>
@@ -17,24 +17,24 @@ const Home = () => {
           architecture, performance, and writing scalable, maintainable code.
         </motion.p>
 
-        <motion.a href="#about" className="home__link">
+        <motion.a href="#about" className="Hero__link">
           About Me
-          <span className="home__link-icon">
+          <span className="Hero__link-icon">
             <ArrowIcon />
           </span>
         </motion.a>
       </motion.div>
 
-      <div className="home__image">
+      <div className="Hero__image">
         <img
           src={assets.DevelopmentImage}
           alt="Development Illustration"
           loading="lazy"
         />
-        <span className="home__dot">.</span>
+        <span className="Hero__dot">.</span>
       </div>
     </section>
   );
 };
 
-export default Home;
+export default Hero;

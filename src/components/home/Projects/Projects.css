@@ -1,4 +1,4 @@
-#projects {
+.projects {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -6,15 +6,7 @@
   height: 100vh;
 }
 
-.projects-underline {
-  display: flex;
-  justify-content: center;
-  height: fit-content;
-  height: 100%;
-  width: 100%;
-}
-
-.projects {
+.projects__list {
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -25,7 +17,7 @@
   scroll-behavior: smooth;
 }
 
-.projects .project {
+.projects__item {
   min-width: fit-content;
   height: 100vh;
   display: flex;
@@ -35,7 +27,7 @@
   pointer-events: auto;
 }
 
-.projects > div {
+.projects__list > div {
   min-width: 100%;
   width: 100%;
   height: 100%;
@@ -44,32 +36,32 @@
   align-items: center;
 }
 
-.links {
+.projects__links {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.links a {
+.projects__link {
   text-decoration: none;
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
 }
 
-.links .code,
-.links .code svg g path {
+.projects__link--code,
+.projects__link--code svg g path {
   color: var(--color-lava);
   fill: var(--color-lava);
 }
 
 /* Tablet styles */
 @media (max-width: 1024px) {
-  .projects .project {
+  .projects__item {
     padding: 0 20px;
   }
 
-  .links a {
+  .projects__link {
     font-size: 16px;
     line-height: 22px;
   }
@@ -77,24 +69,25 @@
 
 /* Mobile styles */
 @media (max-width: 767px) {
-  #projects {
+  .projects {
     min-height: 100vh;
   }
-  s .projects {
+
+  .projects__list {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
-  .projects .project {
+  .projects__item {
     min-width: 100vw;
     padding: 0 16px;
   }
 
-  .projects > div {
+  .projects__list > div {
     min-width: 100vw;
   }
 
-  .links a {
+  .projects__link {
     font-size: 16px;
     line-height: 20px;
   }

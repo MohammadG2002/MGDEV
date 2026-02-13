@@ -3,10 +3,10 @@ import sections from "../../components/home/sections";
 
 const Home = () => {
   return (
-    <div className="snap-container">
+    <div className="home">
       {sections.map((section) => (
-        <div key={section.id} className="snap-section">
-          <section.component key={section.id} />
+        <div key={section.id} className="home__section">
+          <section.component />
         </div>
       ))}
     </div>

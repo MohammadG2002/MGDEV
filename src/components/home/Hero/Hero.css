@@ -1,11 +1,11 @@
-.home {
+.Hero {
   display: flex;
   align-items: center;
   height: 100%;
   gap: 2rem;
 }
 
-.home__headline {
+.Hero__headline {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,18 +14,18 @@
   max-width: 35rem;
 }
 
-.home__headline h1 {
+.Hero__headline h1 {
   line-height: 4rem;
   color: aliceblue;
 }
 
-.home__headline p {
+.Hero__headline p {
   font-size: 1.125rem;
   line-height: 1.6;
   color: aliceblue;
 }
 
-.home__link {
+.Hero__link {
   display: flex;
   align-items: center;
   font-size: 1.25rem;
@@ -33,29 +33,29 @@
   text-decoration: none;
 }
 
-.home__link-icon {
+.Hero__link-icon {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
   transition: transform 300ms ease;
 }
 
-.home__link:hover .home__link-icon {
+.Hero__link:hover .Hero__link-icon {
   transform: rotate(90deg);
 }
 
-.home__image {
+.Hero__image {
   position: relative;
   max-width: 400px;
   flex-shrink: 0;
   transition: filter 300ms ease;
 }
 
-.home__image:hover {
+.Hero__image:hover {
   filter: drop-shadow(var(--shadow-aqua));
 }
 
-.home__dot {
+.Hero__dot {
   position: absolute;
   bottom: 170px;
   left: 174px;
@@ -78,50 +78,50 @@
 }
 
 @media (max-width: 1024px) {
-  .home__headline {
+  .Hero__headline {
     gap: 1.5rem;
     max-width: 100%;
   }
 
-  .home__headline h1 {
+  .Hero__headline h1 {
     line-height: 2.5rem;
   }
 
-  .home__headline p {
+  .Hero__headline p {
     font-size: 1rem;
     line-height: 1.3;
   }
 
-  .home__link {
+  .Hero__link {
     font-size: 1.125rem;
   }
 }
 
 @media (max-width: 767px) {
-  .home {
+  .Hero {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4rem;
   }
 
-  .home__headline {
+  .Hero__headline {
     gap: 1.5rem;
     max-width: 100%;
     order: 1;
   }
 
-  .home__headline h1 {
+  .Hero__headline h1 {
     font-size: 2.5rem;
     line-height: 2.5rem;
   }
 
-  .home__headline p {
+  .Hero__headline p {
     font-size: 1rem;
     line-height: 1.3;
   }
 
-  .home__link {
+  .Hero__link {
     font-size: 1.125rem;
   }
 }
