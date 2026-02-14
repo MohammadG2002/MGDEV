@@ -15,7 +15,7 @@
   align-items: center;
   position: relative;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 4rem;
 }
 
@@ -38,4 +38,10 @@
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 1024px) {
+  .home__section {
+    padding: 0 2rem;
+  }
 }

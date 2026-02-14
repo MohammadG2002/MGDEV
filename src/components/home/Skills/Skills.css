@@ -1,35 +1,35 @@
-.skills-container {
+.skills-sec {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  width: 100%;
   gap: 1.5rem;
 }
 
-.skills-underline {
+.skills-sec__underline {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  height: fit-content;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
-  width: fit-content;
   max-width: 70rem;
   padding: 0 4rem;
 }
 
-.skills-underline p {
-  font-size: 1rem;
-  line-height: 1.4rem;
-  color: aliceblue;
-  white-space: wrap;
-  text-overflow: clip;
+.skills-sec__underline h1 {
   text-align: center;
 }
 
-.skills-underline a {
+.skills-sec__underline p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: aliceblue;
+  text-align: center;
+}
+
+.skills-sec__underline a {
   color: var(--color-link);
   font-weight: 500;
   text-decoration: none;
@@ -38,57 +38,57 @@
     text-decoration 0.3s ease;
 }
 
-.skills-underline a:hover {
-  text-decoration: underline;
+.skills-sec__underline a:hover {
   color: var(--color-aqua);
+  text-decoration: underline;
 }
 
-.skills {
+.skills-sec__items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   min-width: 37rem;
   max-width: 70rem;
 }
 
 @media (max-width: 1024px) {
-  .skills-container {
+  .skills-sec {
     gap: 1.2rem;
   }
 
-  .skills-underline {
+  .skills-sec__underline {
     gap: 1.2rem;
     padding: 0 3rem;
   }
 
-  .skills-underline p {
+  .skills-sec__underline p {
     line-height: 1.3rem;
   }
 
-  .skills {
+  .skills-sec__items {
     min-width: 30rem;
     max-width: 50rem;
   }
 }
 
 @media (max-width: 767px) {
-  .skills-container {
+  .skills-sec {
     gap: 1rem;
   }
 
-  .skills-underline {
+  .skills-sec__underline {
     gap: 1rem;
     padding: 0 1rem;
   }
 
-  .skills-underline p {
+  .skills-sec__underline p {
     font-size: 0.8rem;
     line-height: 1.1rem;
     max-width: 40rem;
   }
 
-  .skills {
+  .skills-sec__items {
     min-width: 100%;
     max-width: 30rem;
   }

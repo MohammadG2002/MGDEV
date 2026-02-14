@@ -4,31 +4,29 @@
   align-items: center;
   width: 4rem;
   margin: 0.5rem 1.5rem;
-  height: fit-content;
   gap: 0.5rem;
 }
 
-.skill-image {
+.skill__image {
   width: 4rem;
   height: 4rem;
   flex-shrink: 0;
-  filter: none;
   transition: filter 0.3s ease;
 }
 
-.skill:hover .skill-image {
+.skill:hover .skill__image {
   filter: brightness(120%) drop-shadow(var(--neon-aqua));
 }
 
-.skill-name {
+.skill__name {
   font-size: 1rem;
-  color: aliceblue;
   font-weight: 600;
+  color: aliceblue;
   cursor: default;
   transition: color 0.3s ease;
 }
 
-.skill:hover .skill-name {
+.skill:hover .skill__name {
   color: var(--color-aqua);
 }
 
@@ -39,12 +37,12 @@
     gap: 0.4rem;
   }
 
-  .skill-image {
+  .skill__image {
     width: 3rem;
     height: 3rem;
   }
 
-  .skill-name {
+  .skill__name {
     font-size: 0.8rem;
   }
 }
@@ -56,12 +54,12 @@
     gap: 0.4rem;
   }
 
-  .skill-image {
+  .skill__image {
     width: 2.5rem;
     height: 2.5rem;
   }
 
-  .skill-name {
+  .skill__name {
     font-size: 0.6rem;
   }
 }

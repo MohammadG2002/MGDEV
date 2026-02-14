@@ -13,10 +13,8 @@ const Contact = () => {
       staggerDelay: 0.15,
     });
   return (
-    <section className="contact" id="contact" ref={ref}>
-      <motion.h1 className="headline-header" {...headerProps}>
-        {splitLetter("Contact Me")}
-      </motion.h1>
+    <section className="contact-sec" id="contact" ref={ref}>
+      <motion.h1 {...headerProps}>{splitLetter("Contact Me")}</motion.h1>
       <motion.p {...contentProps}>
         Have a project in mind or want to work together?
         <br />
@@ -28,12 +26,12 @@ const Contact = () => {
       <motion.a
         href="mailto:mohadahmed90@gmail.com"
         target="_blank"
-        className="email-link"
+        className="contact-sec__email"
         {...linksProps}
       >
         mohadahmed90@gmail.com
       </motion.a>
-      <motion.div className="socials" {...linksProps2}>
+      <motion.div className="contact-sec__socials" {...linksProps2}>
         <Link to="https://github.com/mohammadg2002" target="_blank">
           <GitHubIcon />
         </Link>

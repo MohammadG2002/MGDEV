@@ -16,7 +16,7 @@ const AboutParagraph = ({ paragraph, index }: AboutParagraphProps) => {
     <motion.div
       ref={ref}
       {...createItemProps(index)}
-      className="about__paragraph"
+      className="about-paragraph"
     >
       <h2>{paragraph.title}</h2>
       <p>{paragraph.content}</p>

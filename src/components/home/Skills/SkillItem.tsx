@@ -15,7 +15,11 @@ const SkillItem = ({ image, name, index }: SkillItemProps) => {
   });
 
   return (
-    <motion.div ref={ref} {...createItemProps(index)} className="skill-item">
+    <motion.div
+      ref={ref}
+      {...createItemProps(index)}
+      className="skills-sec__item"
+    >
       <Skill image={image} name={name} />
     </motion.div>
   );

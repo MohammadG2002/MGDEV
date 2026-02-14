@@ -11,8 +11,8 @@ const hero = () => {
     staggerDelay: 0.15,
   });
   return (
-    <section className="hero" id="home" ref={ref}>
-      <div className="hero__headline">
+    <section className="hero-sec" id="home" ref={ref}>
+      <div className="hero-sec__headline">
         <motion.h1 {...headerProps}>
           {splitLetter("Software Developer")}
         </motion.h1>
@@ -24,19 +24,19 @@ const hero = () => {
 
         <motion.a href="#about" {...linksProps}>
           About Me
-          <span className="hero__link-icon">
+          <span>
             <ArrowIcon />
           </span>
         </motion.a>
       </div>
 
-      <div className="hero__image">
+      <div className="hero-sec__image">
         <img
           src={assets.DevelopmentImage}
           alt="Development Illustration"
           loading="lazy"
         />
-        <span className="hero__dot">.</span>
+        <span className="hero-sec__dot">.</span>
       </div>
     </section>
   );

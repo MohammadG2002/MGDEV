@@ -11,13 +11,13 @@ const About = () => {
   });
 
   return (
-    <section className="about" id="about" ref={ref}>
-      <motion.div className="about__header" {...headerProps}>
+    <section className="about-sec" id="about" ref={ref}>
+      <motion.div className="about-sec__header" {...headerProps}>
         <h1>{splitLetter("Hi, I'm Mohammad")}</h1>
         <h1>{splitLetter("Software Developer")}</h1>
       </motion.div>
 
-      <div className="about__content">
+      <div className="about-sec__content">
         {AboutParagraphs.map((paragraph, index) => (
           <AboutParagraph
             key={paragraph.id}

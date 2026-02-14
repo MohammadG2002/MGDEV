@@ -13,8 +13,8 @@ const Skills = () => {
     staggerDelay: 0.15,
   });
   return (
-    <section className="skills-container" id="skills" ref={ref}>
-      <div className="skills-underline">
+    <section className="skills-sec" id="skills" ref={ref}>
+      <div className="skills-sec__underline">
         <motion.h1 {...headerProps}>
           {splitLetter("Skills & Experience")}
         </motion.h1>
@@ -38,7 +38,7 @@ const Skills = () => {
       </div>
 
       <motion.div>
-        <div className="skills">
+        <div className="skills-sec__items">
           {skills.map((skill, index) => (
             <SkillItem
               key={index}

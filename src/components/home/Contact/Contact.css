@@ -1,104 +1,92 @@
-.contact {
+.contact-sec {
   display: flex;
-  height: 100vh;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-.contact p {
+.contact-sec p {
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
-  text-align: center;
+  max-width: 30rem;
   font-size: 1rem;
   line-height: 1.4rem;
   color: aliceblue;
-  max-width: 30rem;
+  text-align: center;
 }
 
-.email-link {
-  color: var(--color-lava);
-  text-decoration: none;
-  font-size: 1.75rem;
-  font-weight: 700;
+.contact-sec__email {
   display: flex;
   align-items: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-lava);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.email-link:hover {
+.contact-sec__email:hover {
   color: aliceblue;
 }
 
-.socials {
+.contact-sec__socials {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
   align-items: center;
   justify-content: start;
-  height: fit-content;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.socials a {
-  height: fit-content;
+.contact-sec__socials a {
   width: fit-content;
-  filter: none;
+  height: fit-content;
   transition: filter 0.3s ease;
 }
 
-.socials a:hover {
+.contact-sec__socials a:hover {
   filter: brightness(120%) drop-shadow(var(--neon-aqua));
 }
 
-.socials a svg {
-  color: var(--color-aqua);
-  height: 2.5rem;
+.contact-sec__socials a svg {
   width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-aqua);
   transition: transform 0.3s ease;
 }
 
-.socials a:hover svg {
+.contact-sec__socials a:hover svg {
   transform: scale(1.2);
 }
 
 @media (max-width: 1024px) {
-  .contact p {
+  .contact-sec p {
     padding: 1.5rem 0;
   }
 
-  .email-link {
+  .contact-sec__email {
     font-size: 1.5rem;
   }
 
-  .socials {
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .socials a svg {
-    height: 2.2rem;
+  .contact-sec__socials a svg {
     width: 2.2rem;
+    height: 2.2rem;
   }
 }
 
 @media (max-width: 767px) {
-  .contact p {
+  .contact-sec p {
     padding: 1rem 0;
     font-size: 0.9rem;
   }
 
-  .email-link {
+  .contact-sec__email {
     font-size: 1.2rem;
   }
 
-  .socials {
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .socials a svg {
-    height: 2rem;
+  .contact-sec__socials a svg {
     width: 2rem;
+    height: 2rem;
   }
 }

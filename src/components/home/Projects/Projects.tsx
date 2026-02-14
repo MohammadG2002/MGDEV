@@ -9,7 +9,7 @@ const Projects = () => {
     staggerDelay: 0.15,
   });
   return (
-    <section className="projects-section" id="projects" ref={ref}>
+    <section className="projects-sec" id="projects" ref={ref}>
       <motion.h1 {...headerProps}>{splitLetter("My Projects")}</motion.h1>
       <motion.p {...contentProps}>
         This section presents an overview of projects I have worked on,
