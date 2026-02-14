@@ -9,9 +9,9 @@ const ProjectNew = () => {
   return (
     <section className="mgdev-sec" id="portfolio">
       <motion.img
-        src={assets.iPad}
-        alt="BuildSync on iPad"
-        className="mgdev-sec__ipad"
+        src={assets.mgdevLaptop}
+        alt="MGDEV on Laptop"
+        className="laptop"
       />
       <div className="mgdev-sec__headline">
         <motion.h1> {splitLetter("BuildSync")}</motion.h1>

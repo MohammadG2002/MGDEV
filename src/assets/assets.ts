@@ -4,6 +4,7 @@ import tasklyLaptop from "./taskly-laptop.png";
 import iMac from "./iMac.png";
 import iPad from "./iPad.png";
 import profile from "./profile.png";
+import mgdevLaptop from "./mgdev-laptop.png";
 
 const assets = {
   DevelopmentImage,
@@ -12,6 +13,7 @@ const assets = {
   iMac,
   iPad,
   profile,
+  mgdevLaptop,
 };
 
 export default assets;
