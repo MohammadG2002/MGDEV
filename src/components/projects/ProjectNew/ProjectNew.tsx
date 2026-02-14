@@ -14,7 +14,7 @@ const ProjectNew = () => {
         className="laptop"
       />
       <div className="mgdev-sec__headline">
-        <motion.h1> {splitLetter("BuildSync")}</motion.h1>
+        <motion.h1> {splitLetter("MGDEV")}</motion.h1>
         <motion.p>
           MGDEV is a modern portfolio website built with
           <strong> React</strong>, <strong>Vite</strong>, and{" "}
@@ -25,7 +25,7 @@ const ProjectNew = () => {
         </motion.p>
 
         <motion.div className="mgdev-sec__links">
-          <Link to="https://github.com/MohammadG2002/BuildSync" target="_blank">
+          <Link to="https://github.com/MohammadG2002/MGDEV" target="_blank">
             View the code{" "}
             <span>
               <ArrowRight />

@@ -8,11 +8,7 @@ import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
 const ProjectBuildSync = () => {
   return (
     <section className="buildsync-sec" id="buildsync">
-      <motion.img
-        src={assets.iPad}
-        alt="BuildSync on iPad"
-        className="buildsync-sec__ipad"
-      />
+      <motion.img src={assets.iPad} alt="BuildSync on iPad" className="ipad" />
       <div className="buildsync-sec__headline">
         <motion.h1> {splitLetter("BuildSync")}</motion.h1>
         <motion.p>
