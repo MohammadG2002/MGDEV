@@ -56,7 +56,7 @@ export const useStaggeredInView = (options: UseStaggeredInViewOptions = {}) => {
     initial: { opacity: 0, y: 20 },
     transition: {
       delay: isInView ? baseDelay + (3 + itemIndex) * staggerDelay : 0,
-      duration: 0.6,
+      duration: isInView ? 0.6 : 0,
       ease: "easeOut" as const,
     },
   });
