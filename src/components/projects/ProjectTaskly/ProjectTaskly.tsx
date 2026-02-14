@@ -7,8 +7,8 @@ import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
 
 const ProjectTaskly = () => {
   return (
-    <div className="project__taskly">
-      <div className="project__taskly-header">
+    <section className="taskly-sec" id="taskly">
+      <div className="taskly-sec__header">
         <motion.h1>{splitLetter("Taskly")}</motion.h1>
         <motion.p>
           Taskly is a frontend taskly-style task management interface built with
@@ -40,7 +40,7 @@ const ProjectTaskly = () => {
           </Link>
         </motion.div>
       </div>
-      <motion.div className="project__taskly-images">
+      <motion.div className="taskly-sec__images">
         <img
           src={assets.tasklyLaptop}
           alt="Taskly on Laptop"
@@ -54,7 +54,7 @@ const ProjectTaskly = () => {
           />
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

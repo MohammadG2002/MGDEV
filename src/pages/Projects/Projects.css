@@ -1,7 +1,47 @@
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.projects {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   height: 100vh;
+  overflow-y: scroll;
+}
+
+.projects__section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 4rem;
+}
+
+.projects__section[data-horizontal="true"] {
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.projects__section > div {
+  height: auto;
+  width: auto;
+  flex: 0 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.projects__section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .projects__section {
+    padding: 0 2rem;
+  }
 }

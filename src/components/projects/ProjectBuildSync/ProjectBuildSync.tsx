@@ -7,15 +7,13 @@ import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
 
 const ProjectBuildSync = () => {
   return (
-    <div className="project__buildsync">
-      <motion.div className="project__buildsync-images">
-        <img
-          src={assets.iPad}
-          alt="BuildSync on iPad"
-          className="buildsync-ipad"
-        />
-      </motion.div>
-      <div className="project__buildsync-header">
+    <section className="buildsync-sec" id="buildsync">
+      <motion.img
+        src={assets.iPad}
+        alt="BuildSync on iPad"
+        className="buildsync-sec__ipad"
+      />
+      <div className="buildsync-sec__headline">
         <motion.h1> {splitLetter("BuildSync")}</motion.h1>
         <motion.p>
           BuildSync is a full-stack project management system built with
@@ -26,7 +24,7 @@ const ProjectBuildSync = () => {
           scheduling, task dependencies, and execution planning, with a focus on
           practical system architecture and responsive user interfaces.
         </motion.p>
-        <motion.div className="links">
+        <motion.div className="buildsync-sec__links">
           <Link to="https://github.com/MohammadG2002/BuildSync" target="_blank">
             View the code{" "}
             <span>
@@ -35,7 +33,7 @@ const ProjectBuildSync = () => {
           </Link>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

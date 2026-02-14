@@ -5,11 +5,11 @@ import pagination from "./pagination";
 import projects from "./projects";
 import "./Sidebar.css";
 const Sidebar = ({ isProject }: { isProject?: boolean }) => {
-  const sectionIds = pagination.map((item) => item.path.replace("#", ""));
+  const items = isProject ? projects : pagination;
+  const sectionIds = items.map((item) => item.path.replace("#", ""));
 
   const activeId = useActiveSection(sectionIds);
   const isMobile = useMobileDetection();
-  const items = isProject ? projects : pagination;
 
   if (isMobile) return null;
 
