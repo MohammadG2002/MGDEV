@@ -42,7 +42,7 @@
 }
 
 .taskly-sec__images .taskly-laptop {
-  width: clamp(16rem, 40vw, 40rem);
+  width: clamp(25rem, 40vw, 40rem);
   height: auto;
   margin-right: clamp(1rem, 5vw, 5rem);
   z-index: 1;
@@ -55,7 +55,8 @@
   position: absolute;
   right: -2rem;
   bottom: -1rem;
-  width: clamp(9rem, 20vw, 20rem);
+  width: clamp(8rem, 20vw, 20rem);
+  margin-right: clamp(1rem, 3vw, 3rem);
   height: auto;
   filter: drop-shadow(var(--shadow-black));
   transition:
@@ -72,4 +73,10 @@
 .taskly-sec__images:hover .taskly-phone {
   filter: drop-shadow(var(--neon-aqua));
   transform: scale(1.1) translateX(2rem);
+}
+
+@media (max-width: 1024px) {
+  .taskly-sec__images {
+    order: -1;
+  }
 }
