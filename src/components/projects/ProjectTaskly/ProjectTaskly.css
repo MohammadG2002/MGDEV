@@ -65,14 +65,10 @@
   z-index: 2;
 }
 
-.taskly-sec__images:hover .taskly-laptop {
-  filter: drop-shadow(var(--neon-aqua));
-  transform: scale(1.1);
-}
-
+.taskly-sec__images:hover .taskly-laptop,
 .taskly-sec__images:hover .taskly-phone {
   filter: drop-shadow(var(--neon-aqua));
-  transform: scale(1.1) translateX(2rem);
+  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {
