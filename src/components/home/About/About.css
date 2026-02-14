@@ -3,6 +3,7 @@
   align-items: center;
   height: 100%;
   width: fit-content;
+  scroll-margin-top: 80px;
 }
 
 .about-sec__header {
