@@ -36,5 +36,20 @@
 @media (max-width: 767px) {
   .about {
     flex-direction: column;
+    height: fit-content;
+    align-items: flex-start;
+  }
+
+  .about__header {
+    margin-bottom: 2rem;
+    max-width: 30rem;
+  }
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 25rem;
   }
 }

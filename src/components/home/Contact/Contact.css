@@ -1,29 +1,18 @@
-#contact {
+.contact {
   display: flex;
   height: 100vh;
   align-items: center;
-  padding: 0 6rem;
-}
-
-.contact .headline-underline {
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: fit-content;
-  height: 100%;
 }
 
-.contact .subheadline {
+.contact p {
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
-}
-
-.contact .subheadline p {
   text-align: center;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: aliceblue;
   max-width: 30rem;
 }
@@ -71,4 +60,45 @@
 
 .socials a:hover svg {
   transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .contact p {
+    padding: 1.5rem 0;
+  }
+
+  .email-link {
+    font-size: 1.5rem;
+  }
+
+  .socials {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .socials a svg {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact p {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .email-link {
+    font-size: 1.2rem;
+  }
+
+  .socials {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .socials a svg {
+    height: 2rem;
+    width: 2rem;
+  }
 }

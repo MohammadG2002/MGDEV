@@ -1,10 +1,11 @@
-#skills {
+.skills-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .skills-underline {
@@ -14,15 +15,17 @@
   flex-direction: column;
   height: fit-content;
   gap: 2rem;
-  max-width: 35rem;
-  flex-shrink: 0;
+  width: fit-content;
+  max-width: 70rem;
+  padding: 0 4rem;
 }
 
 .skills-underline p {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: aliceblue;
   white-space: wrap;
+  text-overflow: clip;
   text-align: center;
 }
 
@@ -49,6 +52,44 @@
   max-width: 70rem;
 }
 
-.ref {
-  width: 0;
+@media (max-width: 1024px) {
+  .skills-container {
+    gap: 1.2rem;
+  }
+
+  .skills-underline {
+    gap: 1.2rem;
+    padding: 0 3rem;
+  }
+
+  .skills-underline p {
+    line-height: 1.3rem;
+  }
+
+  .skills {
+    min-width: 30rem;
+    max-width: 50rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-container {
+    gap: 1rem;
+  }
+
+  .skills-underline {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .skills-underline p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    max-width: 40rem;
+  }
+
+  .skills {
+    min-width: 100%;
+    max-width: 30rem;
+  }
 }

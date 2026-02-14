@@ -9,8 +9,8 @@
 }
 
 .projects-section p {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: aliceblue;
   white-space: wrap;
   text-align: center;
@@ -40,4 +40,40 @@
 
 .projects-section a:hover span {
   transform: translateX(0.5rem);
+}
+
+@media (max-width: 1024px) {
+  .projects-section {
+    gap: 1.5rem;
+  }
+
+  .projects-section p {
+    max-width: 30rem;
+  }
+
+  .projects-section a {
+    font-size: 1.125rem;
+  }
+
+  .projects-section a span {
+    margin-left: 0.3rem;
+  }
+
+  .projects-section a:hover span {
+    transform: translateX(0.4rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-section {
+    gap: 1rem;
+  }
+
+  .projects-section p {
+    max-width: 25rem;
+  }
+
+  .projects-section a {
+    font-size: 1.125rem;
+  }
 }

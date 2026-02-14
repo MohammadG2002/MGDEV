@@ -67,6 +67,7 @@ export const useStaggeredInView = (options: UseStaggeredInViewOptions = {}) => {
     headerProps: createAnimationProps(0),
     contentProps: createAnimationProps(1),
     linksProps: createAnimationProps(2),
+    linksProps2: createAnimationProps(3),
     createItemProps: createItemAnimationProps,
   };
 };
