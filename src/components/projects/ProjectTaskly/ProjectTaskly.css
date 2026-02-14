@@ -1,10 +1,10 @@
 .taskly-sec {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-  max-width: 100vw;
   justify-content: space-between;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
 }
 
 .taskly-sec__header {
@@ -12,11 +12,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  min-width: 15rem;
-  max-width: 25rem;
   flex: 1;
   flex-shrink: 0;
+  min-width: 15rem;
+  max-width: 25rem;
+  gap: 1rem;
 }
 
 .taskly-sec__header p {
@@ -31,15 +31,14 @@
   line-height: 24px;
   font-weight: 500;
   color: var(--color-aqua);
-  text-align: center;
 }
 
 .taskly-sec__images {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: relative;
+  gap: 1rem;
 }
 
 .taskly-sec__images .taskly-laptop {
@@ -47,33 +46,30 @@
   height: auto;
   margin-right: clamp(1rem, 5vw, 5rem);
   z-index: 1;
-  filter: none;
-  transition: filter 0.3s ease;
-}
-
-.taskly-sec__images .taskly-laptop:hover {
-  filter: drop-shadow(var(--neon-aqua));
-}
-
-.phone-container {
-  position: absolute;
-  right: -4rem;
-  bottom: -1rem;
-  z-index: 2;
-  width: fit-content;
-  height: fit-content;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 .taskly-sec__images .taskly-phone {
+  position: absolute;
+  right: -2rem;
+  bottom: -1rem;
+  width: clamp(9rem, 20vw, 20rem);
   height: auto;
-  width: clamp(9rem, 25vw, 25rem);
-  transform: rotate(-25deg);
-  height: auto;
-  z-index: 2;
   filter: drop-shadow(var(--shadow-black));
-  transition: filter 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  z-index: 2;
 }
 
-.taskly-sec__images .taskly-phone:hover {
+.taskly-sec__images:hover .taskly-laptop {
   filter: drop-shadow(var(--neon-aqua));
+  transform: scale(1.1);
+}
+
+.taskly-sec__images:hover .taskly-phone {
+  filter: drop-shadow(var(--neon-aqua));
+  transform: scale(1.1) translateX(2rem);
 }

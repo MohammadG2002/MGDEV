@@ -1,19 +1,23 @@
 import DevelopmentImage from "./Services-Image.png";
 import tasklyPhone from "./taskly-phone.png";
-import tasklyLaptop from "./taskly-laptop.png";
+import tasklyMac from "./taskly-mac.png";
 import iMac from "./iMac.png";
-import iPad from "./iPad.png";
+import buildsynciPad from "./buildsync-ipad.png";
 import profile from "./profile.png";
 import mgdevLaptop from "./mgdev-laptop.png";
+import movieTV from "./movie-tv.png";
+import oldMac from "./old-mac.png";
 
 const assets = {
   DevelopmentImage,
   tasklyPhone,
-  tasklyLaptop,
+  tasklyMac,
   iMac,
-  iPad,
+  buildsynciPad,
   profile,
   mgdevLaptop,
+  movieTV,
+  oldMac,
 };
 
 export default assets;

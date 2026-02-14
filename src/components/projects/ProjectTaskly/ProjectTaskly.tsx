@@ -1,58 +1,26 @@
 import "./ProjectTaskly.css";
 import { motion } from "framer-motion";
 import assets from "../../../assets/assets";
-import splitLetter from "../../../utils/splitLetter";
-import { Link } from "react-router-dom";
-import ArrowRight from "../../../assets/icons/arrow-right.svg?react";
+import ProjectHeadline from "../ProjectHeadline/ProjectHeadline";
+import findProject from "../../../utils/findProject";
 
 const ProjectTaskly = () => {
+  const data = findProject("taskly");
+  if (!data) return null;
   return (
     <section className="taskly-sec" id="taskly">
-      <div className="taskly-sec__header">
-        <motion.h1>{splitLetter("Taskly")}</motion.h1>
-        <motion.p>
-          Taskly is a frontend taskly-style task management interface built with
-          <strong> React </strong>and<strong> TypeScript</strong>. <br /> It
-          demonstrates interactive task organization and workflow management
-          using mock data, focusing on responsive design and smooth UI
-          interactions.
-        </motion.p>
-        <motion.div className="links">
-          <Link
-            to="https://github.com/MohammadG2002/Management-Project"
-            target="_blank"
-            className="code"
-          >
-            View the code{" "}
-            <span>
-              <ArrowRight />
-            </span>
-          </Link>
-          <Link
-            to="https://taskly-virid.vercel.app"
-            target="_blank"
-            className="demo"
-          >
-            Enter the demo{" "}
-            <span>
-              <ArrowRight />
-            </span>
-          </Link>
-        </motion.div>
-      </div>
+      <ProjectHeadline {...data} />
       <motion.div className="taskly-sec__images">
         <img
-          src={assets.tasklyLaptop}
+          src={assets.tasklyMac}
           alt="Taskly on Laptop"
           className="taskly-laptop"
         />
-        <motion.div className="phone-container">
-          <img
-            src={assets.tasklyPhone}
-            alt="Taskly on Phone"
-            className="taskly-phone"
-          />
-        </motion.div>
+        <img
+          src={assets.tasklyPhone}
+          alt="Taskly on Phone"
+          className="taskly-phone"
+        />
       </motion.div>
     </section>
   );
