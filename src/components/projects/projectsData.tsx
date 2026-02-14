@@ -69,7 +69,7 @@ const projectsData: Project[] = [
       </>
     ),
     code: "https://github.com/MohammadG2002/Taskly",
-    demo: "https://taskly-virid.vercel.app",
+    demo: "https://taskly-asal.vercel.app",
   },
   {
     id: "old",
