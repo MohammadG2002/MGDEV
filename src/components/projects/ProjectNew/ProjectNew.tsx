@@ -16,14 +16,14 @@ const ProjectNew = () => {
       <div className="mgdev-sec__headline">
         <motion.h1> {splitLetter("BuildSync")}</motion.h1>
         <motion.p>
-          BuildSync is a full-stack project management system built with
-          <strong> React</strong>, <strong>JavaScript</strong>,{" "}
-          <strong>Node.js</strong>, <strong>Express</strong>, and{" "}
-          <strong>MongoDB</strong>.<br />
-          It is tailored for engineering workflows, supporting project
-          scheduling, task dependencies, and execution planning, with a focus on
-          practical system architecture and responsive user interfaces.
+          MGDEV is a modern portfolio website built with
+          <strong> React</strong>, <strong>Vite</strong>, and{" "}
+          <strong>TypeScript</strong>. It showcases my projects and skills with
+          a focus on clean architecture, performance optimization, and
+          responsive design, enhanced with smooth animations powered by{" "}
+          <strong>Framer Motion</strong>.
         </motion.p>
+
         <motion.div className="mgdev-sec__links">
           <Link to="https://github.com/MohammadG2002/BuildSync" target="_blank">
             View the code{" "}

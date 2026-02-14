@@ -6,8 +6,8 @@
   position: fixed;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 2rem;
 }
 
@@ -33,6 +33,9 @@
 .navbar__links {
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   gap: 6rem;
 }
 
