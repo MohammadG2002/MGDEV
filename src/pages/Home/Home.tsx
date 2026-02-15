@@ -1,6 +1,6 @@
-import "./Home.css";
 import sections from "../../components/home/sections";
 import useMobileDetection from "../../hooks/useMobileDetection";
+import "./Home.css";
 
 const Home = () => {
   const isMobile = useMobileDetection();

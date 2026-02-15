@@ -1,11 +1,9 @@
-"use client";
 import { motion } from "motion/react";
-import GitHubIcon from "../../../assets/icons/github.svg?react";
-import LinkedinIcon from "../../../assets/icons/linkedin.svg?react";
 import "./Contact.css";
-import { Link } from "react-router-dom";
 import splitLetter from "../../../utils/splitLetter";
 import { useStaggeredInView } from "../../../hooks/useStaggeredInView";
+import socialData from "./Social/socialData";
+import Social from "./Social/Social";
 
 const Contact = () => {
   const { ref, headerProps, contentProps, linksProps, linksProps2 } =
@@ -32,15 +30,9 @@ const Contact = () => {
         mohadahmed90@gmail.com
       </motion.a>
       <motion.div className="contact-sec__socials" {...linksProps2}>
-        <Link to="https://github.com/mohammadg2002" target="_blank">
-          <GitHubIcon />
-        </Link>
-        <Link
-          to="https://www.linkedin.com/in/mohammad-ghanim-6286b7294/"
-          target="_blank"
-        >
-          <LinkedinIcon />
-        </Link>
+        {socialData.map((data) => (
+          <Social key={data.name} data={data} />
+        ))}
       </motion.div>
     </section>
   );

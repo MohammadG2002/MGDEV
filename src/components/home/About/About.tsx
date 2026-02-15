@@ -4,6 +4,7 @@ import { useStaggeredInView } from "../../../hooks/useStaggeredInView";
 import AboutParagraphs from "./AboutParagraphs";
 import AboutParagraph from "./AboutParagraph/AboutParagraph";
 import "./About.css";
+import assets from "../../../assets/assets";
 
 const About = () => {
   const { ref, headerProps } = useStaggeredInView({
@@ -11,19 +12,20 @@ const About = () => {
   });
 
   return (
-    <section className="about-sec" id="about" ref={ref}>
+    <section
+      ref={ref}
+      id="about"
+      className="about-sec"
+      style={{ backgroundImage: `url(${assets.profile})` }}
+    >
       <motion.div className="about-sec__header" {...headerProps}>
-        <h1>{splitLetter("Hi, I'm Mohammad")}</h1>
-        <h1>{splitLetter("Software Developer")}</h1>
+        <motion.h1>{splitLetter("Hi, I'm Mohammad")}</motion.h1>
+        <motion.h1>{splitLetter("Software Developer")}</motion.h1>
       </motion.div>
 
       <div className="about-sec__content">
         {AboutParagraphs.map((paragraph, index) => (
-          <AboutParagraph
-            key={paragraph.id}
-            paragraph={paragraph}
-            index={index}
-          />
+          <AboutParagraph key={index} paragraph={paragraph} index={index} />
         ))}
       </div>
     </section>

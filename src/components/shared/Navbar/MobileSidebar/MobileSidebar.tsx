@@ -40,7 +40,7 @@ const MobileSidebar = () => {
           </nav>
 
           <HashLink
-            to="#contact"
+            to="/home/#contact"
             className="mobile-sidebar__contact"
             onClick={closeSidebar}
             smooth

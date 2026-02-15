@@ -1,9 +1,9 @@
-import LogoIcon from "../../../assets/icons/develop.svg?react";
-import "./Navbar.css";
 import { HashLink } from "react-router-hash-link";
 import navLinks from "./navLinks";
+import LogoIcon from "../../../assets/icons/develop.svg?react";
 import useMobileDetection from "../../../hooks/useMobileDetection";
 import MobileSidebar from "./MobileSidebar/MobileSidebar";
+import "./Navbar.css";
 
 const Navbar = () => {
   const isMobile = useMobileDetection();
